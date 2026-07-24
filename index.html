@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhi Le | Integrated Marketing Project Lead</title>
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Nhi Le | Integrated Marketing Project Lead">
+    <meta property="og:description" content="Leading integrated marketing programs from strategy to measurable business outcomes.">
+    <meta property="og:image" content="Nhi.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Minimal Editorial Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' x='50%' text-anchor='middle' font-family='serif' font-size='80' fill='%231C1B1A'>NL</text></svg>">
+
+    <!-- Theme & Sharing -->
+    <meta name="theme-color" content="#F9F8F6">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nhi Le | Integrated Marketing Project Lead">
+    <meta name="twitter:description" content="Leading integrated marketing programs from strategy to measurable business outcomes.">
+    <meta name="twitter:image" content="Nhi.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Preload hero banner (LCP image) for faster first paint -->
+    <link rel="preload" as="image" href="hero banner.png" fetchpriority="high">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP for Premium Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            50: '#F9F8F6',
+                            100: '#F2EFEA',
+                            200: '#E5DED5',
+                            800: '#2C2A28',
+                            900: '#1C1B1A',
+                        },
+                        gold: {
+                            500: '#A68A61',
+                            600: '#8C7355',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        widest: '.2em',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Premium Customizations */
+        ::selection {
+            background-color: #E5DED5;
+            color: #1C1B1A;
+        }
+        
+        body {
+            background-color: #F9F8F6;
+            color: #1C1B1A;
+            overflow-x: hidden;
+            overscroll-behavior-y: none;
+        }
+        
+        html {
+            scroll-padding-top: 100px;
+        }
+
+        /* Cinematic Background Blending - Enhanced for depth */
+        .cinematic-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            background: #F9F8F6;
+        }
+        
+        .cinematic-bg::before, .cinematic-bg::after {
+            content: '';
+            position: absolute;
+            inset: -20%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(120px);
+            transition: opacity 1s ease;
+            will-change: transform, opacity;
+            animation: subtle-pan 25s infinite alternate ease-in-out;
+        }
+
+        .cinematic-bg-gradient {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(166, 138, 97, 0.05) 0%, rgba(249, 248, 246, 0.6) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes subtle-pan {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.05) translate(-1.5%, -1.5%); }
+        }
+        
+        .cinematic-bg::before {
+            background-image: url('OCB_KV.jpeg');
+            opacity: 0.05;
+        }
+        
+        .cinematic-bg::after {
+            background-image: url('Vietjet_KV.png');
+            opacity: 0.08;
+        }
+
+        /* Portrait Integration */
+        .portrait-blend {
+            mix-blend-mode: multiply;
+            filter: contrast(1.05) saturate(0.95);
+            will-change: transform;
+        }
+
+        /* Logo Carousel */
+        .logo-carousel-container {
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+
+        .logo-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 45s linear infinite;
+            will-change: transform;
+        }
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } 
+        }
+
+        .brand-logo {
+            filter: grayscale(100%) opacity(85%);
+            transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            object-fit: contain;
+            height: 56px;
+            width: auto;
+        }
+        .brand-logo:hover {
+            filter: grayscale(0%) opacity(100%);
+            transform: scale(1.08) translateY(-2px);
+        }
+        .brand-logo.logo-masan { height: 64px; }
+
+        /* Story Cards Hover - Elevated UX */
+        .story-card-wrapper {
+            perspective: 1000px;
+        }
+        
+        .story-card {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease, border-color 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            will-change: transform;
+            box-shadow: 0 4px 20px -10px rgba(0,0,0,0.05);
+        }
+        .story-card-img {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+            will-change: transform;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 40px 80px -20px rgba(28, 27, 26, 0.15);
+            border-color: rgba(166, 138, 97, 0.3);
+        }
+        
+        .story-card:hover .story-card-img {
+            transform: scale(1.08);
+            filter: brightness(1.05);
+        }
+        .story-card:hover .card-title {
+            color: #1C1B1A;
+            opacity: 1; 
+        }
+        .story-card:hover .card-cta {
+            color: #A68A61;
+        }
+        .story-card:hover .card-arrow {
+            transform: translateX(8px);
+            color: #A68A61;
+        }
+
+        /* Gradient overlay for cards to ensure text readability */
+        .card-img-overlay {
+            background: linear-gradient(to top, rgba(28,27,26,0.9) 0%, rgba(28,27,26,0.2) 60%, transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Immersive Modal */
+        #story-modal {
+            clip-path: inset(100% 0 0 0);
+            transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+            visibility: hidden; 
+        }
+        #story-modal.active {
+            clip-path: inset(0 0 0 0);
+            visibility: visible;
+        }
+        .progress-bar {
+            transform-origin: left;
+            transform: scaleX(0);
+            will-change: transform;
+            transition: transform 0.1s ease-out; 
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Nav Link Hover & Active States */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #A68A61;
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #1C1B1A; font-weight: 600; }
+
+        /* CTA Buttons */
+        .btn-primary {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -10px rgba(28, 27, 26, 0.3);
+            background-color: #2C2A28;
+        }
+        .btn-primary:active { transform: translateY(0); }
+        
+        .btn-outline {
+            background: linear-gradient(to right, #1C1B1A 50%, transparent 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-outline:hover {
+            background-position: left bottom;
+            color: white;
+            border-color: #1C1B1A;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -10px rgba(28, 27, 26, 0.15);
+        }
+        .btn-outline:active { transform: translateY(0); }
+
+        /* Smooth Section Reveal Defaults */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            will-change: transform, opacity;
+        }
+
+        /* Reading Focus & Spotlight effect */
+        .focus-block {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 0.85; 
+        }
+        .focus-block:hover {
+            opacity: 1;
+            transform: translateY(-2px); 
+        }
+        
+        .spotlight-wrapper {
+            position: relative;
+        }
+        .spotlight {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            width: 500px;
+            height: 500px;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            mix-blend-mode: overlay;
+        }
+        .spotlight-wrapper:hover .spotlight {
+            opacity: 1;
+        }
+        
+        /* Focus Styles for Accessibility */
+        *:focus-visible { outline: 2px solid #A68A61; outline-offset: 4px; border-radius: 2px; }
+        
+        /* Scroll Indicator */
+        .scroll-indicator {
+            animation: bounce 2s infinite cubic-bezier(0.28, 0.84, 0.42, 1);
+            transition: opacity 0.4s ease;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+
+        /* Main Window Progress Bar */
+        #main-progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 100;
+            pointer-events: none;
+        }
+        #main-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #A68A61, #8C7355);
+            width: 0%;
+            transform-origin: left;
+            will-change: width;
+        }
+
+        /* AI Assistant Animations & Glassmorphism */
+        @keyframes pulse-subtle {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(166, 138, 97, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(166, 138, 97, 0); }
+        }
+        .ai-pulse-btn {
+            animation: pulse-subtle 3s infinite ease-in-out;
+            background: rgba(28, 27, 26, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .ai-chat-glass {
+            background: rgba(249, 248, 246, 0.95);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(229, 222, 213, 0.8);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .ai-suggestion {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .ai-suggestion:hover {
+            background-color: #1C1B1A;
+            color: #FFFFFF;
+            border-color: #1C1B1A;
+            transform: translateX(4px);
+        }
+        
+        @media (max-width: 768px) {
+            .brand-logo { height: 48px; }
+            .brand-logo.logo-masan { height: 56px; } 
+        }
+
+        /* --- Interactive Framework Accordion --- */
+        .framework-step .circle-accent {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .framework-step:hover .circle-accent, .framework-step.active .circle-accent {
+            border-color: #A68A61;
+            color: #A68A61;
+            transform: scale(1.15);
+            box-shadow: 0 0 15px rgba(166, 138, 97, 0.15);
+        }
+        .framework-step .framework-title {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .framework-step:hover .framework-title, .framework-step.active .framework-title {
+            color: #F9F8F6;
+            transform: translateX(4px) scale(1.02);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .framework-content {
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            visibility: hidden;
+        }
+        .framework-step.active .framework-content {
+            max-height: 120px;
+            opacity: 1;
+            visibility: visible;
+        }
+        .framework-connector {
+            transition: all 0.35s ease;
+        }
+        .framework-step:hover ~ .framework-connector i {
+            color: #A68A61;
+        }
+
+        /* --- Premium Why Work With Me Cards --- */
+        .why-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid rgba(229, 222, 213, 0.6);
+        }
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #A68A61;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px -12px rgba(0,0,0,0.12);
+            border-color: rgba(28, 27, 26, 0.15);
+            background-color: #FCFBF9;
+        }
+        .why-card:hover::before {
+            transform: scaleX(1);
+        }
+        .why-card:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+        .why-card .card-number {
+            transition: color 0.4s ease;
+        }
+        .why-card:hover .card-number {
+            color: #A68A61;
+        }
+        .why-card h4, .why-card p {
+            transition: color 0.3s ease;
+        }
+        .why-card:hover h4 { color: #1C1B1A; }
+        .why-card:hover p { color: #2C2A28; }
+        .why-card .why-arrow {
+            opacity: 0;
+            transform: translateX(-10px) translateY(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            color: #A68A61;
+        }
+        .why-card:hover .why-arrow {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+
+        /* Background pattern & accent per card: faint dot-grid texture plus a
+           large watermark of the card's own number, echoing the visible index
+           without adding new copy. */
+        .why-card {
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(28, 27, 26, 0.045) 1px, transparent 0);
+            background-size: 18px 18px;
+        }
+        .why-card::after {
+            content: attr(data-index);
+            position: absolute;
+            right: -0.08em;
+            bottom: -0.32em;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 9rem;
+            line-height: 1;
+            color: rgba(166, 138, 97, 0.07);
+            pointer-events: none;
+            z-index: 0;
+            transition: color 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .why-card:hover::after {
+            color: rgba(166, 138, 97, 0.14);
+            transform: translateY(-6px);
+        }
+        .why-card:nth-child(odd) {
+            background-image:
+                linear-gradient(135deg, rgba(166, 138, 97, 0.04) 0%, transparent 55%),
+                radial-gradient(circle at 1px 1px, rgba(28, 27, 26, 0.045) 1px, transparent 0);
+            background-size: auto, 18px 18px;
+        }
+        .why-card:nth-child(even) {
+            background-image:
+                linear-gradient(225deg, rgba(166, 138, 97, 0.04) 0%, transparent 55%),
+                radial-gradient(circle at 1px 1px, rgba(28, 27, 26, 0.045) 1px, transparent 0);
+            background-size: auto, 18px 18px;
+        }
+
+        /* --- Experience Timeline Hover --- */
+        .exp-node {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .exp-item:hover .exp-node {
+            background-color: #A68A61;
+            border-color: #F9F8F6;
+            box-shadow: 0 0 12px rgba(166, 138, 97, 0.4);
+            transform: scale(1.2);
+        }
+
+        /* Capabilities Focus */
+        .cap-list li {
+            opacity: 0.65;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .cap-list li:hover {
+            opacity: 1;
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+
+        /* Navbar elevated state on scroll */
+        #navbar.is-scrolled {
+            box-shadow: 0 8px 30px -12px rgba(28, 27, 26, 0.12);
+            background-color: rgba(249, 248, 246, 0.96);
+        }
+
+        /* Cursor-tracking spotlight position (set via JS custom properties) */
+        .spotlight {
+            left: var(--spot-x, 50%);
+            top: var(--spot-y, 50%);
+        }
+
+        /* Respect the user's motion preference: keep the same layout/content,
+           just remove non-essential motion for anyone who has asked for it. */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+            .scroll-reveal, .gsap-hero-elem, .gsap-hero-headline-line,
+            .gsap-portrait, .modal-section {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .logo-track { animation: none !important; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-stone-200 selection:text-stone-900">
+
+    <div id="main-progress-container"><div id="main-progress-bar"></div></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 top-0 transition-all duration-500 bg-stone-50/90 backdrop-blur-md border-b border-stone-200/50" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-6 flex justify-between items-center">
+            <a href="#" class="font-serif text-xl tracking-wide font-semibold text-stone-900 transition-transform hover:scale-105" aria-label="Nhi Le Home">NHI LE<span class="text-gold-500">.</span></a>
+            
+            <div class="hidden md:flex gap-12 text-[15px] font-medium text-stone-500">
+                <a href="#work" class="nav-link section-link transition-colors hover:text-stone-900">Work</a>
+                <a href="#framework" class="nav-link section-link transition-colors hover:text-stone-900">Process</a>
+                <a href="#experience" class="nav-link section-link transition-colors hover:text-stone-900">Experience</a>
+                <a href="#contact" class="nav-link section-link transition-colors hover:text-stone-900">Contact</a>
+            </div>
+            
+            <a href="Nhi_Le_Resume.pdf" download class="hidden md:inline-flex items-center gap-2 text-[15px] font-medium border border-stone-300 rounded-full px-7 py-3 hover:bg-stone-900 hover:text-white hover:border-stone-900 transition-all duration-300 shadow-sm hover:shadow-md">
+                <i class="ph ph-download-simple"></i> Download Resume
+            </a>
+            
+            <button class="md:hidden text-2xl text-stone-900 p-2 -mr-2" aria-label="Menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-50 border-t border-stone-200 px-6 py-4 flex flex-col gap-4 shadow-xl">
+            <a href="#work" class="text-stone-600 hover:text-stone-900 font-medium py-2 border-b border-stone-100 section-link transition-colors" onclick="this.parentElement.classList.add('hidden')">Work</a>
+            <a href="#framework" class="text-stone-600 hover:text-stone-900 font-medium py-2 border-b border-stone-100 section-link transition-colors" onclick="this.parentElement.classList.add('hidden')">Process</a>
+            <a href="#experience" class="text-stone-600 hover:text-stone-900 font-medium py-2 border-b border-stone-100 section-link transition-colors" onclick="this.parentElement.classList.add('hidden')">Experience</a>
+            <a href="#contact" class="text-stone-600 hover:text-stone-900 font-medium py-2 border-b border-stone-100 section-link transition-colors" onclick="this.parentElement.classList.add('hidden')">Contact</a>
+            <a href="Nhi_Le_Resume.pdf" download class="text-stone-900 font-medium py-2 flex items-center gap-2 hover:text-gold-600 transition-colors" onclick="this.parentElement.classList.add('hidden')">
+                <i class="ph ph-download-simple"></i> Download Resume
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-24 pb-12 flex items-center overflow-hidden" id="hero-portrait-container">
+        <!-- Full-bleed Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="hero banner.png" alt="Nhi Le Portrait" class="w-full h-full object-cover object-[75%_top] md:object-top portrait-blend gsap-portrait origin-center" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <!-- Gradient Overlays for Text Legibility -->
+        <div class="absolute inset-0 z-0 bg-stone-900/5 mix-blend-multiply"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-r from-stone-50 via-stone-50/85 sm:via-stone-50/75 to-transparent sm:to-stone-50/10 w-full sm:w-4/5 lg:w-3/5 pointer-events-none"></div>
+        <div class="absolute inset-x-0 bottom-0 z-0 h-2/5 bg-gradient-to-t from-stone-50 via-stone-50/10 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 flex flex-col h-full justify-center mt-12 md:mt-0">
+            <div class="max-w-2xl">
+                <div class="gsap-hero-elem overflow-hidden">
+                    <span class="inline-block text-[10px] md:text-xs font-bold tracking-[0.2em] text-gold-600 uppercase mb-6 border-b border-gold-600/30 pb-1 gsap-hero-text">Integrated Marketing Project Lead</span>
+                </div>
+                
+                <h1 class="gsap-hero-elem text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] text-stone-900 mb-6 focus-block drop-shadow-sm">
+                    <div class="overflow-hidden"><span class="inline-block gsap-hero-headline-line">Leading integrated marketing programs</span></div>
+                    <div class="overflow-hidden"><span class="inline-block gsap-hero-headline-line">from <span class="italic text-stone-700">strategy</span> to measurable</span></div>
+                    <div class="overflow-hidden"><span class="inline-block gsap-hero-headline-line">business outcomes.</span></div>
+                </h1>
+                
+                <p class="gsap-hero-elem gsap-hero-desc text-base md:text-lg lg:text-xl text-stone-600 font-light leading-relaxed mb-10 focus-block">
+                    I help businesses turn complex marketing challenges into structured, integrated programs by aligning strategy, creative, production and cross-functional teams to deliver measurable impact.
+                </p>
+                
+                <div class="gsap-hero-elem gsap-hero-btns flex flex-wrap gap-4 mb-12 lg:mb-16">
+                    <a href="#work" class="btn-primary inline-flex items-center justify-center gap-2 bg-stone-900 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-medium shadow-lg">
+                        Explore Campaign Stories <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                    <a href="#contact" class="btn-outline inline-flex items-center justify-center gap-2 border border-stone-300 bg-stone-50/60 backdrop-blur-sm text-stone-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-medium">
+                        Let's Connect <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+                <div class="gsap-hero-elem gsap-hero-kpi grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 border-t border-stone-300/70 pt-8 focus-block">
+                    <div>
+                        <p class="text-3xl md:text-4xl font-serif text-stone-900 mb-1"><span class="count" data-target="5">0</span>+</p>
+                        <p class="text-[10px] font-medium text-stone-600 uppercase tracking-widest leading-snug">Years<br><span class="text-stone-500">Marketing Experience</span></p>
+                    </div>
+                    <div>
+                        <p class="text-3xl md:text-4xl font-serif text-stone-900 mb-1"><span class="count" data-target="14">0</span>B <span class="text-lg font-sans tracking-normal text-stone-600">VND</span></p>
+                        <p class="text-[10px] font-medium text-stone-600 uppercase tracking-widest leading-snug">Largest Budget<br><span class="text-stone-500">Campaign Managed</span></p>
+                    </div>
+                    <div>
+                        <p class="text-3xl md:text-4xl font-serif text-stone-900 mb-1"><span class="count" data-target="10">0</span>+</p>
+                        <p class="text-[10px] font-medium text-stone-600 uppercase tracking-widest leading-snug">Integrated Campaigns<br><span class="text-stone-500">Delivered</span></p>
+                    </div>
+                    <div>
+                        <p class="text-3xl md:text-4xl font-serif text-stone-900 mb-1"><span class="count" data-target="6">0</span></p>
+                        <p class="text-[9px] font-medium text-stone-600 uppercase tracking-wider leading-[1.4] mt-1">
+                            Industries<br>
+                            <span class="text-stone-500 font-light tracking-normal normal-case">Banking • Aviation • FMCG<br>E-commerce • Tech • Agency</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-stone-600 scroll-indicator" id="scroll-indicator">
+                <span class="text-[10px] font-medium tracking-[0.2em] uppercase">Explore</span>
+                <i class="ph ph-arrow-down text-lg"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="relative py-24 bg-stone-50 border-y border-stone-200 overflow-hidden focus-block">
+        <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(166,138,97,0.06) 0%, transparent 65%);"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 mb-10 text-center scroll-reveal relative z-10">
+            <div class="w-10 h-px bg-gold-500 mx-auto mb-5"></div>
+            <h3 class="text-xs md:text-sm font-bold tracking-[0.2em] text-gold-600 uppercase mb-4">Trusted By</h3>
+            <p class="text-stone-600 max-w-2xl mx-auto font-light text-sm md:text-base leading-relaxed text-balance">Trusted by leading brands to direct integrated marketing initiatives from strategy through execution.</p>
+        </div>
+        <div class="relative z-10 w-full overflow-hidden flex bg-stone-50 py-4 scroll-reveal logo-carousel-container" aria-hidden="true">
+            <div class="logo-track items-center gap-20 md:gap-32 px-12">
+                <img src="Logo_OCB.jpg" alt="OCB" class="brand-logo" loading="lazy" decoding="async">
+                <img src="Logo_Shopee.jpg" alt="Shopee" class="brand-logo" loading="lazy" decoding="async">
+                <img src="Logo_Samsung.jpg" alt="Samsung" class="brand-logo" loading="lazy" decoding="async">
+                <img src="Logo_Vietjet.jpg" alt="Vietjet" class="brand-logo" loading="lazy" decoding="async">
+                <img src="Logo_Masan.webp" alt="Masan" class="brand-logo logo-masan" loading="lazy" decoding="async">
+                <img src="Logo_The Brick.png" alt="The Brick" class="brand-logo" loading="lazy" decoding="async">
+                <!-- Duplicate -->
+                <img src="Logo_OCB.jpg" alt="OCB" class="brand-logo" loading="lazy" decoding="async">
+                <img src="Logo_Shopee.jpg" alt="Shopee" class="brand-logo" loading="lazy" decoding="async">
+                <img src="Logo_Samsung.jpg" alt="Samsung" class="brand-logo" loading="lazy" decoding="async">
+                <img src="Logo_Vietjet.jpg" alt="Vietjet" class="brand-logo" loading="lazy" decoding="async">
+                <img src="Logo_Masan.webp" alt="Masan" class="brand-logo logo-masan" loading="lazy" decoding="async">
+                <img src="Logo_The Brick.png" alt="The Brick" class="brand-logo" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaign Stories -->
+    <section id="work" class="py-24 md:py-32 bg-[#F2EFEA] section-anchor">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            
+            <div class="mb-16 md:mb-24 md:w-2/3 scroll-reveal focus-block">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 mb-6">Campaign Stories</h2>
+                <p class="text-base md:text-lg text-stone-600 font-light leading-relaxed text-balance">
+                    These selected projects demonstrate how I translate business objectives into integrated, large-scale marketing programs that deliver measurable corporate results.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+                
+                <!-- Featured Card 1: OCB -->
+                <div class="lg:col-span-3 story-card-wrapper">
+                <article class="story-card bg-white rounded-2xl md:rounded-[2rem] overflow-hidden cursor-pointer scroll-reveal flex flex-col lg:flex-row group border border-stone-200/60 spotlight-wrapper h-full" onclick="openStory('story-ocb')" role="button" tabindex="0" aria-label="Read case study: OCB Bank">
+                    <div class="spotlight"></div>
+                    <div class="lg:w-7/12 h-64 md:h-80 lg:h-auto overflow-hidden relative bg-stone-100 z-10 border-r border-stone-100">
+                        <img src="OCB_KV.jpeg" alt="OCB Campaign Visual" class="w-full h-full object-contain story-card-img opacity-95 mix-blend-multiply" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 card-img-overlay opacity-90"></div>
+                        <div class="absolute bottom-6 left-6 right-6 lg:bottom-10 lg:left-10 z-20">
+                            <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-white/90 uppercase block mb-2">Banking • Financial Services</span>
+                            <span class="font-serif text-2xl md:text-3xl lg:text-4xl text-white drop-shadow-md">OCB</span>
+                        </div>
+                    </div>
+                    <div class="lg:w-5/12 p-8 md:p-10 lg:p-14 flex-grow flex flex-col bg-white relative z-10">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl font-serif text-stone-800 card-title opacity-90 mb-6 md:mb-8 leading-snug transition-all duration-300">Transforming a Tet Campaign into a Long-term Brand Platform</h3>
+                        
+                        <div class="mb-8 border-l-2 border-gold-500 pl-6 flex-grow mt-2">
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-3">Role & Scale</p>
+                            <p class="text-sm md:text-base text-stone-900 font-medium mb-6">Campaign Lead • 26B VND Combined Budget</p>
+                            
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-3">Business Impact</p>
+                            <ul class="text-sm md:text-base text-stone-700 font-medium space-y-2">
+                                <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-gold-500 text-lg"></i> 165% Deposit Growth</li>
+                                <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-gold-500 text-lg"></i> 116% Customer Growth</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-auto pt-6 border-t border-stone-100 flex items-center justify-between font-medium text-sm md:text-base text-stone-900 card-cta transition-colors">
+                            <span>Explore Case Study</span>
+                            <div class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center group-hover:bg-gold-50 transition-colors">
+                                <i class="ph ph-arrow-right card-arrow transition-transform duration-300 text-lg" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                </div>
+
+                <!-- Supporting Card 2: Vietjet -->
+                <div class="lg:col-span-1 story-card-wrapper h-full">
+                <article class="story-card bg-white rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer scroll-reveal flex flex-col h-full group border border-stone-200/60 spotlight-wrapper" onclick="openStory('story-vietjet')" role="button" tabindex="0" aria-label="Read case study: Vietjet Air Academy">
+                    <div class="spotlight"></div>
+                    <div class="h-60 md:h-[280px] overflow-hidden relative bg-stone-100 z-10">
+                        <img src="Vietjet_KV.png" alt="Vietjet Campaign Visual" class="w-full h-full object-contain story-card-img opacity-90 mix-blend-multiply" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 card-img-overlay opacity-80"></div>
+                        <div class="absolute bottom-6 left-6 right-6 z-20">
+                            <span class="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase block mb-1">Education • Aviation</span>
+                            <span class="font-serif text-xl md:text-2xl text-white">Vietjet Air Academy</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col bg-white relative z-10">
+                        <h3 class="text-lg md:text-xl font-serif text-stone-800 card-title opacity-90 mb-6 leading-snug transition-all duration-300">Turning Brand Strategy into Integrated Marketing Execution</h3>
+                        
+                        <div class="mb-6 border-l-2 border-gold-500 pl-4 flex-grow">
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Role</p>
+                            <p class="text-sm text-stone-900 font-medium mb-4">Marketing Project Lead</p>
+                            
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Impact Focus</p>
+                            <ul class="text-sm text-stone-700 font-medium space-y-1">
+                                <li>Brand Strategy Execution</li>
+                                <li>Qualified Lead Generation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-auto pt-6 border-t border-stone-100 flex items-center justify-between font-medium text-sm md:text-base text-stone-900 card-cta transition-colors">
+                            <span>Explore Case Study</span>
+                            <div class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center group-hover:bg-gold-50 transition-colors">
+                                <i class="ph ph-arrow-right card-arrow transition-transform duration-300 text-lg" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                </div>
+
+                <!-- Supporting Card 3: Kokomi -->
+                <div class="lg:col-span-1 story-card-wrapper h-full">
+                <article class="story-card bg-white rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer scroll-reveal flex flex-col h-full group border border-stone-200/60 spotlight-wrapper" onclick="openStory('story-kokomi')" role="button" tabindex="0" aria-label="Read case study: Masan Kokomi 90">
+                    <div class="spotlight"></div>
+                    <div class="h-60 md:h-[280px] overflow-hidden relative bg-stone-100 z-10">
+                        <img src="Kokomi_Frame.png" alt="Kokomi Campaign Visual" class="w-full h-full object-contain story-card-img opacity-90 mix-blend-multiply" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 card-img-overlay opacity-80"></div>
+                        <div class="absolute bottom-6 left-6 right-6 z-20">
+                            <span class="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase block mb-1">FMCG</span>
+                            <span class="font-serif text-xl md:text-2xl text-white">Masan - Kokomi 90</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col bg-white relative z-10">
+                        <h3 class="text-lg md:text-xl font-serif text-stone-800 card-title opacity-90 mb-6 leading-snug transition-all duration-300">Producing a Social Video Featuring Kokomi's AI-generated Brand Mascot</h3>
+                        
+                        <div class="mb-6 border-l-2 border-gold-500 pl-4 flex-grow">
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Role & Timeline</p>
+                            <p class="text-sm text-stone-900 font-medium mb-4">Marketing Project Lead • 10-Day Delivery</p>
+                        </div>
+                        
+                        <div class="mt-auto pt-6 border-t border-stone-100 flex items-center justify-between font-medium text-sm md:text-base text-stone-900 card-cta transition-colors">
+                            <span>Explore Case Study</span>
+                            <div class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center group-hover:bg-gold-50 transition-colors">
+                                <i class="ph ph-arrow-right card-arrow transition-transform duration-300 text-lg" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                </div>
+
+                <!-- Supporting Card 4: Nii Studio -->
+                <div class="lg:col-span-1 story-card-wrapper h-full">
+                <article class="story-card bg-white rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer scroll-reveal flex flex-col h-full group border border-stone-200/60 spotlight-wrapper" onclick="openStory('story-nii')" role="button" tabindex="0" aria-label="Read case study: Nii Studio">
+                    <div class="spotlight"></div>
+                    <div class="h-60 md:h-[280px] overflow-hidden relative bg-stone-100 z-10">
+                        <img src="Nii Studio.png" alt="Nii Studio Visual" class="w-full h-full object-contain story-card-img opacity-90 mix-blend-multiply" loading="lazy" decoding="async">
+                        <div class="absolute inset-0 card-img-overlay opacity-80"></div>
+                        <div class="absolute bottom-6 left-6 right-6 z-20">
+                            <span class="text-[10px] font-bold tracking-[0.2em] text-white/90 uppercase block mb-1">E-commerce</span>
+                            <span class="font-serif text-xl md:text-2xl text-white">Nii Studio</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col bg-white relative z-10">
+                        <h3 class="text-lg md:text-xl font-serif text-stone-800 card-title opacity-90 mb-6 leading-snug transition-all duration-300">Scaling an E-commerce Brand from Launch to Growth</h3>
+                        
+                        <div class="mb-6 border-l-2 border-gold-500 pl-4 flex-grow">
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Role</p>
+                            <p class="text-sm text-stone-900 font-medium mb-4">D2C Strategy Lead</p>
+                            
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Impact Focus</p>
+                            <ul class="text-sm text-stone-700 font-medium space-y-1">
+                                <li>Marketplace Optimization</li>
+                                <li>Performance Marketing</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-auto pt-6 border-t border-stone-100 flex items-center justify-between font-medium text-sm md:text-base text-stone-900 card-cta transition-colors">
+                            <span>Explore Case Study</span>
+                            <div class="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center group-hover:bg-gold-50 transition-colors">
+                                <i class="ph ph-arrow-right card-arrow transition-transform duration-300 text-lg" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Framework -->
+    <section id="framework" class="py-24 md:py-32 bg-stone-50 text-stone-900 section-anchor border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div class="scroll-reveal focus-block">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mb-6">Strategic Framework</h2>
+                <p class="text-base md:text-lg text-stone-600 font-light leading-relaxed mb-6">
+                    Successful marketing doesn't begin with creative execution. It begins with understanding the business challenge.
+                </p>
+                <p class="text-base md:text-lg text-stone-600 font-light leading-relaxed">
+                    Every campaign I lead follows a structured framework that aligns business goals, customer insight and execution across every touchpoint to ensure ROI.
+                </p>
+            </div>
+            
+            <div class="relative py-4 md:py-8 scroll-reveal pl-2 md:pl-0">
+                <div class="absolute left-6 md:left-4 top-8 md:top-12 bottom-8 md:bottom-12 w-px bg-gradient-to-b from-transparent via-gold-500/50 to-transparent"></div>
+                
+                <ul class="space-y-4 md:space-y-6 relative z-10 font-serif text-lg md:text-xl lg:text-2xl text-stone-800">
+                    <li class="flex items-center gap-4 md:gap-6"><span class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gold-500 flex items-center justify-center text-[10px] md:text-xs text-gold-600 bg-white font-sans shrink-0">01</span> Business Goals</li>
+                    <li class="flex items-center gap-4 md:gap-6 text-stone-400"><span class="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center font-sans shrink-0"><i class="ph ph-arrow-down" aria-hidden="true"></i></span> Market Research</li>
+                    <li class="flex items-center gap-4 md:gap-6"><span class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gold-500 flex items-center justify-center text-[10px] md:text-xs text-gold-600 bg-white font-sans shrink-0">02</span> Integrated Strategy</li>
+                    <li class="flex items-center gap-4 md:gap-6 text-stone-400"><span class="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center font-sans shrink-0"><i class="ph ph-arrow-down" aria-hidden="true"></i></span> Cross-functional Planning</li>
+                    <li class="flex items-center gap-4 md:gap-6"><span class="w-6 h-6 md:w-8 md:h-8 rounded-full border border-gold-500 flex items-center justify-center text-[10px] md:text-xs text-gold-600 bg-white font-sans shrink-0">03</span> Campaign Execution</li>
+                    <li class="flex items-center gap-4 md:gap-6 text-stone-400"><span class="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center font-sans shrink-0"><i class="ph ph-arrow-down" aria-hidden="true"></i></span> Optimization</li>
+                    <li class="flex items-center gap-4 md:gap-6 text-stone-900 font-medium"><span class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gold-500 flex items-center justify-center text-[10px] md:text-xs text-white font-sans shrink-0"><i class="ph ph-check" aria-hidden="true"></i></span> Business Impact</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="py-24 md:py-32 bg-stone-900 text-stone-100 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-center mb-16 md:mb-20 scroll-reveal text-white focus-block">Capabilities</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 lg:gap-20">
+                <!-- Column 1 -->
+                <div class="scroll-reveal focus-block">
+                    <h3 class="text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-6 md:mb-8 pb-4 border-b border-stone-800">Strategy</h3>
+                    <ul class="space-y-3 md:space-y-4 font-light text-stone-300 text-base md:text-lg cap-list">
+                        <li>Integrated Marketing Strategy</li>
+                        <li>Campaign Planning</li>
+                        <li>Go-to-market Strategy</li>
+                        <li>Consumer Insights</li>
+                        <li>Brand Communication</li>
+                    </ul>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="scroll-reveal sm:delay-100 focus-block">
+                    <h3 class="text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-6 md:mb-8 pb-4 border-b border-stone-800">Leadership</h3>
+                    <ul class="space-y-3 md:space-y-4 font-light text-stone-300 text-base md:text-lg cap-list">
+                        <li>Cross-functional Leadership</li>
+                        <li>Stakeholder Management</li>
+                        <li>Agency & Vendor Management</li>
+                        <li>Marketing Budget Management</li>
+                        <li>Project Governance</li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="scroll-reveal sm:col-span-2 md:col-span-1 md:delay-200 focus-block">
+                    <h3 class="text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-6 md:mb-8 pb-4 border-b border-stone-800">Execution</h3>
+                    <ul class="space-y-3 md:space-y-4 font-light text-stone-300 text-base md:text-lg cap-list">
+                        <li>Creative Production</li>
+                        <li>Campaign Delivery</li>
+                        <li>Marketing Operations</li>
+                        <li>Performance Optimization</li>
+                        <li>Marketing Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience" class="py-24 md:py-32 bg-stone-50 section-anchor">
+        <div class="max-w-4xl mx-auto px-6 md:px-12">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 mb-6 text-center scroll-reveal focus-block">Professional Experience</h2>
+            <p class="text-center text-stone-600 mb-16 md:mb-24 font-light text-base md:text-lg max-w-2xl mx-auto scroll-reveal leading-relaxed focus-block">
+                Over five years of progressive leadership experience across tier-1 organizations, managing complex marketing initiatives from strategy through execution.
+            </p>
+
+            <div class="relative border-l border-stone-200 ml-3 md:ml-6 mt-12 pb-8 space-y-16">
+                
+                <!-- Role 1: The Brick -->
+                <div class="relative pl-8 md:pl-12 exp-item scroll-reveal">
+                    <span class="absolute -left-1.5 top-2 w-3 h-3 bg-stone-300 rounded-full ring-4 ring-stone-50 exp-node"></span>
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                        <h3 class="text-xl md:text-2xl font-serif font-semibold text-stone-900 whitespace-nowrap">The Brick Consulting</h3>
+                        <p class="text-sm font-serif italic text-stone-500 mt-1 md:mt-0 md:ml-4">2025 — Present</p>
+                    </div>
+                    <p class="text-[10px] md:text-xs font-bold tracking-widest text-gold-600 uppercase mb-4">Marketing Project Lead</p>
+                    <p class="text-stone-600 font-light text-sm md:text-base leading-relaxed">
+                        Leading integrated marketing programs for enterprise clients across banking, FMCG and education. Directing cross-functional collaboration across strategy, creative, production and client teams.
+                    </p>
+                </div>
+
+                <!-- Role 2: OCB (Flagship) -->
+                <div class="relative pl-8 md:pl-12 exp-item scroll-reveal">
+                    <span class="absolute -left-[7px] top-[30px] md:top-[38px] w-3.5 h-3.5 bg-gold-500 rounded-full ring-4 ring-stone-50 shadow-sm exp-node z-10 transition-transform duration-300 group-hover:scale-110"></span>
+                    <div class="bg-[#FDFCFB] hover:bg-white border border-stone-200/60 rounded-2xl p-6 md:p-8 group hover:shadow-xl transition-all duration-400 relative">
+                        <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                            <h3 class="text-xl md:text-2xl font-serif font-semibold text-stone-900 whitespace-nowrap group-hover:text-gold-600 transition-colors">Orient Commercial Bank (OCB)</h3>
+                            <p class="text-sm font-serif italic text-stone-500 mt-1 md:mt-0 md:ml-4">2022 — 2025</p>
+                        </div>
+                        <p class="text-[10px] md:text-xs font-bold tracking-widest text-gold-600 uppercase mb-5">Marketing Campaign Lead</p>
+                        <p class="text-stone-600 font-light text-sm md:text-base leading-relaxed mb-6">
+                            Led nationwide integrated marketing campaigns with a 26B VND combined budget. Managed agency partners and internal cross-functional teams across nationwide execution.
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-100">
+                            <div>
+                                <p class="text-lg md:text-xl font-serif text-stone-900 mb-1">165%</p>
+                                <p class="text-[9px] uppercase tracking-widest text-stone-400">Deposit Growth</p>
+                            </div>
+                            <div>
+                                <p class="text-lg md:text-xl font-serif text-stone-900 mb-1">116%</p>
+                                <p class="text-[9px] uppercase tracking-widest text-stone-400">New Customer Growth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 3: Shopee -->
+                <div class="relative pl-8 md:pl-12 exp-item scroll-reveal">
+                    <span class="absolute -left-1.5 top-2 w-3 h-3 bg-stone-300 rounded-full ring-4 ring-stone-50 exp-node"></span>
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                        <h3 class="text-xl md:text-2xl font-serif font-semibold text-stone-900 whitespace-nowrap">Shopee Vietnam</h3>
+                        <p class="text-sm font-serif italic text-stone-500 mt-1 md:mt-0 md:ml-4">2021 — 2022</p>
+                    </div>
+                    <p class="text-[10px] md:text-xs font-bold tracking-widest text-gold-600 uppercase mb-4">Seller Growth Executive</p>
+                    <p class="text-stone-600 font-light text-sm md:text-base leading-relaxed">
+                        Supported seller growth through marketplace campaigns and coordinated cross-functional programs to improve engagement.
+                    </p>
+                </div>
+
+                <!-- Role 4: Samsung -->
+                <div class="relative pl-8 md:pl-12 exp-item scroll-reveal">
+                    <span class="absolute -left-1.5 top-2 w-3 h-3 bg-stone-300 rounded-full ring-4 ring-stone-50 exp-node"></span>
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                        <h3 class="text-xl md:text-2xl font-serif font-semibold text-stone-900 whitespace-nowrap">Samsung Electronics</h3>
+                        <p class="text-sm font-serif italic text-stone-500 mt-1 md:mt-0 md:ml-4">2019 — 2021</p>
+                    </div>
+                    <p class="text-[10px] md:text-xs font-bold tracking-widest text-gold-600 uppercase mb-4">Marketing Comms. Executive</p>
+                    <p class="text-stone-600 font-light text-sm md:text-base leading-relaxed">
+                        Supported integrated marketing execution across ATL, BTL and retail campaigns while coordinating agency partners, production vendors and internal stakeholders.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Me -->
+    <section class="py-24 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="md:w-3/4 mb-16 md:mb-20 scroll-reveal focus-block">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-stone-900 mb-6 text-focus-muted">What I Bring Beyond Campaign Delivery</h2>
+                <p class="text-base md:text-lg text-stone-600 font-light leading-relaxed max-w-3xl text-focus-muted text-balance">
+                    Marketing success isn't just about launching campaigns. It's about aligning business goals, people and execution to create outcomes that matter. Here's how I approach every project.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+                <div class="p-8 md:p-10 rounded-2xl scroll-reveal why-card z-10 h-full" role="article" data-index="01">
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <span class="text-4xl md:text-5xl font-serif text-stone-200 card-number font-medium">01</span>
+                        <i class="ph ph-arrow-up-right text-2xl why-arrow" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="text-xl md:text-2xl font-serif font-medium text-stone-700 mb-4 leading-snug relative z-10">I turn business objectives into structured marketing plans that teams can execute with confidence.</h4>
+                    <p class="text-stone-500 font-light text-sm md:text-base leading-relaxed relative z-10">Rather than jumping straight into channels or creative ideas, I start by understanding the business objective and building a strategy that teams can confidently execute.</p>
+                </div>
+                
+                <div class="p-8 md:p-10 rounded-2xl scroll-reveal md:translate-y-8 why-card z-10 h-full" role="article" data-index="02">
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <span class="text-4xl md:text-5xl font-serif text-stone-200 card-number font-medium">02</span>
+                        <i class="ph ph-arrow-up-right text-2xl why-arrow" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="text-xl md:text-2xl font-serif font-medium text-stone-700 mb-4 leading-snug relative z-10">I align stakeholders, agencies and internal teams to keep complex marketing initiatives moving efficiently.</h4>
+                    <p class="text-stone-500 font-light text-sm md:text-base leading-relaxed relative z-10">From stakeholders and agencies to creative and production teams, I create clarity, alignment and momentum so complex projects stay on track.</p>
+                </div>
+                
+                <div class="p-8 md:p-10 rounded-2xl scroll-reveal why-card z-10 h-full" role="article" data-index="03">
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <span class="text-4xl md:text-5xl font-serif text-stone-200 card-number font-medium">03</span>
+                        <i class="ph ph-arrow-up-right text-2xl why-arrow" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="text-xl md:text-2xl font-serif font-medium text-stone-700 mb-4 leading-snug relative z-10">I simplify complexity through clear planning, defined ownership and disciplined project management.</h4>
+                    <p class="text-stone-500 font-light text-sm md:text-base leading-relaxed relative z-10">Clear planning, defined ownership and realistic timelines help teams deliver efficiently—without sacrificing quality or collaboration.</p>
+                </div>
+                
+                <div class="p-8 md:p-10 rounded-2xl scroll-reveal md:translate-y-8 why-card z-10 h-full" role="article" data-index="04">
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <span class="text-4xl md:text-5xl font-serif text-stone-200 card-number font-medium">04</span>
+                        <i class="ph ph-arrow-up-right text-2xl why-arrow" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="text-xl md:text-2xl font-serif font-medium text-stone-700 mb-4 leading-snug relative z-10">I thrive in fast-paced environments where clear communication, adaptability and decisive execution drive project success.</h4>
+                    <p class="text-stone-500 font-light text-sm md:text-base leading-relaxed relative z-10">Whether managing nationwide campaigns or delivering under tight deadlines, I focus on solving problems, adapting quickly and helping teams move forward with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="bg-stone-900 text-stone-200 py-16 md:py-20 relative z-20 border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 scroll-reveal focus-block">
+            <h3 class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-10 text-center md:text-left">Quick Facts</h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 text-sm md:text-base font-light">
+                <div>
+                    <p class="text-[10px] font-bold tracking-widest text-stone-500 uppercase mb-3">Based In</p>
+                    <p class="text-white font-medium mb-1">Ho Chi Minh City, Vietnam</p>
+                    <p class="text-stone-400 font-serif italic text-sm">GMT+7</p>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold tracking-widest text-stone-500 uppercase mb-3">Available For</p>
+                    <ul class="space-y-2 text-stone-300">
+                        <li>Remote</li>
+                        <li>Full-time</li>
+                        <li>Contract</li>
+                        <li>Consulting</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold tracking-widest text-stone-500 uppercase mb-3">Working Style</p>
+                    <ul class="space-y-2 text-stone-300">
+                        <li>Cross-functional Leadership</li>
+                        <li>Async Collaboration</li>
+                        <li>Global Teams</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold tracking-widest text-stone-500 uppercase mb-3">Languages</p>
+                    <ul class="space-y-2 text-stone-300">
+                        <li>Vietnamese</li>
+                        <li>English</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Let's Build Something Together & Footer -->
+    <section id="contact" class="pt-24 md:pt-32 pb-12 bg-stone-900 text-stone-100 overflow-hidden relative section-anchor">
+        <div class="absolute right-0 top-0 w-full md:w-1/2 h-full opacity-5 pointer-events-none">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full scale-150 origin-top-right"><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="md:w-3/4 mb-20 scroll-reveal focus-block">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.1]">Let's build marketing programs that create measurable business impact.</h2>
+                <p class="text-lg md:text-xl text-stone-400 font-light leading-relaxed max-w-2xl mb-12">
+                    Whether you're looking for an Integrated Marketing Project Lead, Marketing Consultant or cross-functional marketing partner, I'd love to discuss how I can help bring your next initiative to life.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                    <a href="mailto:lttnhi1908@gmail.com" class="btn-primary inline-flex items-center justify-center gap-3 bg-white text-stone-900 px-6 sm:px-8 py-4 sm:py-5 rounded-full font-medium text-base sm:text-lg">
+                        <i class="ph ph-envelope-simple text-xl" aria-hidden="true"></i> Email Me
+                    </a>
+                    <a href="https://www.linkedin.com/in/nhi-le-2527a9164/" target="_blank" rel="noopener noreferrer" class="btn-outline inline-flex items-center justify-center gap-3 border border-stone-700 text-stone-300 hover:text-white hover:border-white px-6 sm:px-8 py-4 sm:py-5 rounded-full font-medium text-base sm:text-lg">
+                        <i class="ph ph-linkedin-logo text-xl" aria-hidden="true"></i> Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-800 pt-12 flex flex-col md:flex-row justify-between gap-10 md:gap-8 text-stone-500 font-light text-sm">
+                <div class="max-w-md">
+                    <p class="font-serif text-2xl text-white mb-3">Nhi Le<span class="text-gold-500">.</span></p>
+                    <p class="leading-relaxed">Integrated Marketing Project Lead | Campaign Marketing | Marketing Operations | Cross-functional Leadership</p>
+                    <p class="mt-4 font-serif italic">Ho Chi Minh City, Vietnam</p>
+                </div>
+                
+                <div class="flex flex-col gap-3 md:text-right">
+                    <a href="mailto:lttnhi1908@gmail.com" class="hover:text-white transition-colors inline-flex items-center md:justify-end gap-2"><i class="ph ph-envelope-simple" aria-hidden="true"></i> lttnhi1908@gmail.com</a>
+                    <a href="tel:+84967019497" class="hover:text-white transition-colors inline-flex items-center md:justify-end gap-2"><i class="ph ph-phone" aria-hidden="true"></i> +84 967 019 497</a>
+                    <a href="https://www.linkedin.com/in/nhi-le-2527a9164/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center md:justify-end gap-2"><i class="ph ph-linkedin-logo" aria-hidden="true"></i> LinkedIn Profile</a>
+                    <p class="mt-6 md:mt-4 text-stone-600">© 2026 All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Floating Button -->
+    <button id="ai-toggle-btn" class="fixed bottom-6 right-6 z-40 bg-stone-900 text-white p-3 rounded-full shadow-xl hover:bg-stone-800 transition-all duration-500 flex items-center justify-center gap-2 group opacity-0 translate-y-12 pointer-events-none border border-stone-700/50" aria-label="Ask AI Assistant">
+        <i class="ph-fill ph-sparkle text-base text-gold-500"></i>
+    </button>
+
+    <!-- AI Chat Window -->
+    <div id="ai-chat-window" class="fixed bottom-20 right-6 w-[350px] max-w-[calc(100vw-3rem)] h-[550px] max-h-[70vh] bg-stone-50 rounded-2xl shadow-2xl border border-stone-200/80 z-40 flex flex-col overflow-hidden transition-all duration-300 opacity-0 scale-95 pointer-events-none origin-bottom-right" aria-hidden="true">
+        
+        <!-- Header -->
+        <div class="bg-stone-900 text-white p-4 flex justify-between items-center relative overflow-hidden">
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center border border-stone-700">
+                    <i class="ph-fill ph-sparkle text-gold-500 text-sm"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-base leading-tight">Nhi's Assistant</h3>
+                    <p class="text-[9px] uppercase tracking-widest text-stone-400">Powered by AI</p>
+                </div>
+            </div>
+            <button id="ai-close-btn" class="text-stone-400 hover:text-white transition-colors relative z-10 p-1" aria-label="Close Assistant">
+                <i class="ph ph-x text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Chat Area -->
+        <div id="ai-chat-messages" class="flex-grow overflow-y-auto p-4 bg-[#F9F8F6] flex flex-col gap-4 hide-scrollbar">
+            <!-- Initial Message & Suggestions -->
+            <div class="chat-message flex flex-col gap-1 items-start" id="ai-initial-content">
+                <div class="bg-white border border-stone-200 text-stone-700 p-3.5 rounded-2xl rounded-tl-sm text-sm font-light leading-relaxed shadow-sm max-w-[90%]">
+                    Hello. I'm an AI assistant trained on Nhi Le's professional portfolio. You can ask me questions about her experience, leadership style, or specific campaigns. How can I help you?
+                </div>
+                
+                <!-- Clickable Suggestions -->
+                <div class="flex flex-col gap-2 mt-3 w-full pl-1">
+                    <button class="ai-suggestion text-left text-[13px] border border-stone-200 bg-white text-stone-600 py-2 px-3 rounded-xl font-light hover:bg-stone-100 transition-colors w-fit shadow-sm" onclick="sendSuggestedQuery('Tell me about the OCB campaign.')">Tell me about the OCB campaign.</button>
+                    <button class="ai-suggestion text-left text-[13px] border border-stone-200 bg-white text-stone-600 py-2 px-3 rounded-xl font-light hover:bg-stone-100 transition-colors w-fit shadow-sm" onclick="sendSuggestedQuery('How does Nhi lead cross-functional teams?')">How does Nhi lead cross-functional teams?</button>
+                    <button class="ai-suggestion text-left text-[13px] border border-stone-200 bg-white text-stone-600 py-2 px-3 rounded-xl font-light hover:bg-stone-100 transition-colors w-fit shadow-sm" onclick="sendSuggestedQuery('Summarize Nhi\'s experience.')">Summarize Nhi's experience.</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-3 bg-white border-t border-stone-100">
+            <form id="ai-chat-form" class="relative flex items-center">
+                <input type="text" id="ai-chat-input" placeholder="Ask about her experience..." class="w-full bg-stone-50 border border-stone-200 rounded-full py-2.5 pl-4 pr-10 text-sm text-stone-800 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all placeholder:text-stone-400 font-light" autocomplete="off" required>
+                <button type="submit" id="ai-send-btn" class="absolute right-1.5 w-7 h-7 flex items-center justify-center bg-stone-900 text-white rounded-full hover:bg-stone-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Send Message">
+                    <i class="ph-fill ph-paper-plane-right text-[10px]"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- IMMERSIVE STORY MODAL SYSTEM -->
+    <div id="story-modal" class="fixed inset-0 z-50 bg-stone-50 overflow-hidden flex flex-col w-full h-full" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-nav-title">
+        <!-- Sticky Header & Progress -->
+        <header class="absolute top-0 w-full z-20 bg-stone-50/95 backdrop-blur-md border-b border-stone-200/80">
+            <div class="h-1 w-full bg-stone-200">
+                <div class="progress-bar h-full bg-gold-500 w-full" id="modal-progress"></div>
+            </div>
+            <div class="max-w-5xl mx-auto px-6 py-4 md:py-5 flex justify-between items-center">
+                <span class="font-serif font-semibold text-stone-900 tracking-wide text-base md:text-lg" id="modal-nav-title">Project Name</span>
+                <button onclick="closeStory()" class="text-stone-500 hover:text-stone-900 transition-colors flex items-center gap-2 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 rounded-md px-2 py-1" aria-label="Close Case Study">
+                    <span class="hidden md:inline">Close</span> <i class="ph ph-x text-lg" aria-hidden="true"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Scrollable Content Container -->
+        <main id="modal-scroll-container" class="flex-grow overflow-y-auto hide-scrollbar pt-20 pb-32 smooth-scroll">
+            
+            <!-- Dynamic Content Injected Here via JS -->
+            <div id="modal-content-area"></div>
+
+        </main>
+    </div>
+
+    <!-- Data for Case Studies -->
+    <script>
+        // Data for Case Studies
+        const storiesData = {
+            'story-ocb': {
+                navTitle: 'OCB Bank',
+                image: 'OCB_KV.jpeg',
+                label: 'Banking • Financial Services',
+                headline: 'Transforming a Tet Campaign into a Long-term Brand Platform',
+                execSummary: {
+                    challenge: "Transform \"Về nhà là có Tết\" into a scalable long-term brand platform capable of sustaining emotional relevance while driving measurable commercial growth across consecutive years.",
+                    role: "Campaign Lead",
+                    scope: "Nationwide Integrated Tet Campaigns (26B VND Combined Budget)",
+                    timeline: "6 Months Across Tet 2024 & Tet 2025",
+                    collaboration: "Brand • Product • Agency • Media • Production",
+                    result: "165% Deposit Growth, 116% Customer Growth, 60M+ Campaign Reach, Top 10 Most Discussed Tet Campaign"
+                },
+                sections: [
+                    { title: 'The Business Challenge', text: "Tet is Vietnam's most competitive marketing season, where financial brands compete aggressively for both consumer attention and business growth.<br><br>Following the success of \"Về nhà là có Tết\", OCB's next challenge was no longer creating another successful Tet campaign—it was transforming the idea into a long-term brand platform capable of delivering sustained emotional relevance and measurable commercial growth across consecutive years.<br><br>The objective was to integrate storytelling, media, product marketing and customer acquisition into one unified campaign ecosystem." },
+                    { title: 'Evolving a Long-term Brand Platform', text: "Rather than reinventing the campaign each year, OCB continued investing in \"Về nhà là có Tết\" as a long-term Tet communication platform.<br><br>Tet 2025 expanded the narrative through \"Về nhà là có Tết 2\", deepening the emotional story while strengthening the connection between financial wellbeing, prosperity and family reunion.<br><br>This platform approach ensured consistency in brand positioning while allowing the creative execution to evolve with changing consumer expectations." },
+                    { title: 'Bringing the Campaign to Life', text: "The campaign was executed through a fully integrated communication ecosystem, delivering a consistent brand experience across paid, owned and earned channels.<br><br><span class='block mb-3 font-medium text-stone-900'>Campaign Ecosystem</span><ul class='grid sm:grid-cols-2 gap-x-6 gap-y-2 mb-4'><li>• Hero Music Video</li><li>• TVC Production</li><li>• Digital Advertising</li><li>• Social Media</li><li>• PR & Media Relations</li><li>• KOL & Creator Partnerships</li><li>• CRM Communications</li><li>• Branch Activation & POSM</li></ul>Every touchpoint worked together to reinforce one unified campaign narrative while supporting awareness, engagement and business growth." },
+                    { title: 'My Role', text: "As Campaign Lead, I managed the campaigns from strategic planning through execution, ensuring alignment between business objectives, creative excellence and operational delivery.<br><br><span class='block mb-3 font-medium text-stone-900'>Responsibilities</span><ul class='space-y-2 mb-4'><li>• Integrated Campaign Strategy</li><li>• IMC Planning</li><li>• Budget & Timeline Management</li><li>• Agency & Production Management</li><li>• Cross-functional Leadership</li><li>• Campaign Performance Optimization</li></ul>" },
+                    { title: 'Business Results', text: "Across two consecutive Tet campaigns, \"Về nhà là có Tết\" evolved from a successful brand campaign into one of OCB's strongest long-term communication platforms, delivering both outstanding communication performance and measurable business growth.<br><br><span class='block mb-3 font-serif text-xl text-stone-900'>Tet 2025</span><ul class='space-y-2 mb-8'><li>• <strong class='font-medium text-stone-900'>165%</strong> Deposit Growth vs. Campaign Target</li><li>• <strong class='font-medium text-stone-900'>116%</strong> Growth in New Customer Acquisition</li><li>• <strong class='font-medium text-stone-900'>60M+</strong> Campaign Reach</li><li>• <strong class='font-medium text-stone-900'>30M+</strong> Campaign Views</li><li>• <strong class='font-medium text-stone-900'>1M</strong> MV Views Within the First 48 Hours</li><li>• Top 10 Most Discussed Tet Campaign (Kompa)</li><li>• Top 10 Most Discussed Tet MV (YouNet SocialTrend)</li></ul><span class='block mb-3 font-serif text-xl text-stone-900'>Tet 2024</span><ul class='space-y-2 mb-8'><li>• Top 3 Tet TVC in the Banking & Financial Services category (Reputa)</li><li>• <strong class='font-medium text-stone-900'>13.7M</strong> MV Views across YouTube & TikTok (265.3% vs. KPI)</li><li>• <strong class='font-medium text-stone-900'>192.58%</strong> Product Video View KPI Achievement</li><li>• <strong class='font-medium text-stone-900'>3M</strong> Social Media Engagements</li><li>• Established \"Về nhà là có Tết\" as OCB's long-term Tet communication platform</li></ul>" },
+                    { title: 'Reflection', text: "This project demonstrated that sustainable marketing success comes from building platforms—not just campaigns.<br><br>Leading two consecutive Tet campaigns required balancing business objectives, brand storytelling and execution across multiple stakeholders.<br><br>More importantly, it reinforced my ability to scale a successful campaign into a long-term marketing platform that consistently delivered both brand impact and commercial performance." }
+                ]
+            },
+            'story-vietjet': {
+                navTitle: 'Vietjet Air Academy',
+                image: 'Vietjet_KV.png',
+                label: 'Education • Aviation',
+                headline: 'Turning Brand Strategy into Integrated Marketing Execution.',
+                execSummary: {
+                    challenge: "Transform brand strategy into a cohesive, year-long marketing experience supporting ongoing brand awareness and lead generation.",
+                    role: "Marketing Project Lead",
+                    scope: "Integrated Brand Communication & Lead Generation",
+                    timeline: "12+ Months (2025 – 2026)",
+                    collaboration: "Creative, Production, Media, Client Stakeholders",
+                    result: "Unified Brand Experience & Qualified Lead Pipeline"
+                },
+                sections: [
+                    { title: 'The Business Challenge', text: "Victoria Aviation Academy needed to transform its brand strategy into a cohesive marketing experience that could be consistently expressed across every audience touchpoint.<br><br>Rather than executing standalone campaigns, the challenge was to align creative production, digital advertising, social content and offline activations under one communication direction—strengthening brand awareness while supporting qualified lead generation throughout a year-long marketing engagement." },
+                    { title: 'Building the Strategic Foundation', text: "Effective execution starts with a clear strategy.<br><br>Before creative development began, the team translated market research, audience insights and brand positioning into a unified communication framework that guided every campaign throughout the partnership.<br><br>This strategic foundation ensured every marketing initiative shared the same messaging, visual direction and communication objectives across different channels." },
+                    { title: 'From Strategy to Integrated Execution', text: "With the communication direction established, the focus shifted to bringing the strategy to life through coordinated marketing execution.<br><br>Working across multiple channels and production teams, we developed an integrated collection of marketing assets designed to deliver a consistent brand experience throughout the customer journey.<br><br><span class='block mb-3 font-medium text-stone-900'>Deliverables</span><ul class='grid sm:grid-cols-2 gap-x-6 gap-y-2 mb-4'><li>• TV Commercial & Corporate Video</li><li>• Social Video & Key Visuals</li><li>• Meta Advertising Campaigns</li><li>• Social Media Content</li><li>• Recruitment Event Booths</li><li>• Campaign Creative Assets</li></ul>Each asset served a different purpose while reinforcing the same brand story and communication objectives." },
+                    { title: 'My Role', text: "As Marketing Project Lead, I coordinated cross-functional teams throughout the entire project lifecycle—from planning and creative development to production, campaign launch and final delivery.<br><br>My role focused on keeping strategy, execution and stakeholders aligned while managing multiple workstreams across a long-term engagement.<br><br><span class='block mb-3 font-medium text-stone-900'>Responsibilities</span><ul class='space-y-2 mb-4'><li>• Marketing Project Planning & Communication Planning</li><li>• Creative Brief Development & Production Coordination</li><li>• Timeline & Stakeholder Management</li><li>• Cross-functional Collaboration</li><li>• Campaign Delivery & Quality Control</li></ul>" },
+                    { title: 'Managing Cross-functional Execution', text: "Delivering integrated campaigns required close collaboration between strategists, designers, copywriters, production crews, media specialists and client stakeholders.<br><br>Beyond managing timelines and deliverables, my responsibility was to ensure every asset—from video production to advertising creatives and offline materials—remained aligned with the project's communication objectives while moving efficiently through review and production." },
+                    { title: 'Delivering an Integrated Brand Experience', text: "Throughout the partnership, the team executed a wide range of marketing initiatives that consistently reflected Victoria Aviation Academy's communication strategy across digital and offline channels.<br><br>By coordinating strategy, creative production and campaign execution, we created a cohesive collection of marketing assets that supported ongoing brand awareness and lead generation efforts." },
+                    { title: 'Reflection', text: "This project reinforced that successful integrated marketing is built through alignment.<br><br>Turning strategy into execution requires more than delivering creative assets—it demands continuous collaboration across strategy, creative, production and media teams to ensure every touchpoint communicates a consistent brand experience.<br><br>Leading this project strengthened my ability to manage complex marketing initiatives, coordinate cross-functional teams and translate strategic direction into integrated execution." }
+                ]
+            },
+            'story-kokomi': {
+                navTitle: 'Kokomi',
+                image: 'Kokomi_Frame.png',
+                label: 'FMCG',
+                headline: 'Delivering a Social Video Featuring an AI-generated Brand Mascot.',
+                execSummary: {
+                    challenge: "Produce a high-quality 15s social video introducing a new AI mascot while communicating a core product benefit within an aggressive timeline.",
+                    role: "Marketing Project Lead",
+                    scope: "Social Video Production",
+                    timeline: "10 Days",
+                    collaboration: "Client, Creative Agency, Production Crew",
+                    result: "On-time Delivery, Brand Consistency & AI Mascot Integration"
+                },
+                sections: [
+                    { title: 'The Business Challenge', text: "Kokomi aimed to communicate the key benefit of Kokomi 90—20% more noodles at the same price through a short-form social video. The campaign also introduced the brand's newly developed AI-generated mascot to reinforce Kokomi's refreshed personality: optimistic, fun and full of positive energy.<br><br>The challenge was to deliver an engaging social-first production that balanced product messaging, storytelling and mascot integration within a compressed production timeline." },
+                    { title: 'My Role', text: "As Marketing Project Lead, I coordinated communication between the client, creative and production teams to transform the campaign brief into an executable production plan.<br><br>I managed project timelines, production planning, creative alignment and stakeholder communication to ensure the final video accurately reflected the campaign objective while meeting delivery deadlines.<br><br><span class='block mb-3 font-medium text-stone-900'>Responsibilities</span><ul class='space-y-2 mb-4'><li>• Production Planning & Timeline Management</li><li>• Client Communication & Creative Coordination</li><li>• Stakeholder Alignment & Vendor Coordination</li><li>• Quality Assurance</li></ul>" },
+                    { title: 'Production Journey', text: "From the initial brief to final delivery, every stage required close coordination across multiple teams to keep creative direction, production quality and timeline aligned.<br><br><span class='block mb-3 font-medium text-stone-900'>Workflow</span><p class='font-mono text-xs md:text-sm bg-stone-100 p-4 rounded-md overflow-x-auto whitespace-nowrap hide-scrollbar'>Client Brief &rarr; Creative Concept &rarr; Storyboard Development &rarr; Production Planning &rarr; Filming &rarr; AI Mascot Integration &rarr; Editing &rarr; Final Delivery</p>" },
+                    { title: 'Final Deliverable', text: "The project resulted in a 15-second social video that combined live-action storytelling with Kokomi's AI-generated mascot to communicate the campaign's core product message in a simple, engaging and memorable way.<br><br>The final production supported Kokomi's refreshed brand personality while reinforcing the campaign message:<br><br><span class='italic text-lg md:text-xl font-serif text-stone-900 block border-l-2 border-gold-500 pl-4 py-1 my-6'>\"20% more noodles at the same price.\"</span>" },
+                    { title: 'Business Outcome', text: "Successfully delivered every campaign asset within ten days despite multiple creative revisions and tight production constraints.<br><br>The project demonstrated the importance of clear communication, structured planning and agile project management under pressure." },
+                    { title: 'Reflection', text: "This project reinforced the importance of structured production management in fast-moving campaigns.<br><br>Delivering a short-form social video required more than coordinating production—it meant aligning creative ideas, stakeholder expectations and execution under a tight timeline while ensuring every production decision supported the campaign's business objective." }
+                ]
+            },
+            'story-nii': {
+                navTitle: 'Nii Studio',
+                image: 'Nii Studio.png',
+                label: 'E-commerce',
+                headline: 'Driving sustainable e-commerce growth through targeted performance marketing and marketplace optimization.',
+                execSummary: {
+                    challenge: "Launch and scale a D2C fashion brand in a highly competitive market, prioritizing sustainable unit economics over heavy ad reliance.",
+                    role: "D2C Brand & E-commerce Strategy Lead",
+                    scope: "End-to-End Brand and Digital Operations",
+                    timeline: "Ongoing",
+                    collaboration: "Self-led (Business Ownership)",
+                    result: "Established Omnichannel Presence & Sustainable Marketplace Growth"
+                },
+                sections: [
+                    { title: 'The Business Challenge', text: "Launching and scaling a fashion brand in Vietnam’s highly competitive e-commerce landscape requires more than visual appeal - it demands precise audience targeting, marketplace optimization, and strong unit economics.<br><br>The objective was to build a sustainable, digital-first brand setup from the ground up with limited resources, balancing brand trust with continuous marketplace sales growth." },
+                    { title: 'My Role', text: "As founder and marketing lead, I managed the full marketing and operational lifecycle—from brand positioning and content planning to marketplace optimization and paid performance campaigns.<br><br><span class='block mb-3 font-medium text-stone-900'>Key Responsibilities</span><ul class='space-y-2 mb-4'><li>• Omnichannel Strategy & Positioning</li><li>• Marketplace SEO, Storefront Architecture & Listing Optimization</li><li>• Paid Media Strategy (Automatic Ads) & Budget Efficiency</li><li>• Visual Direction & Content Strategy</li><li>• Customer Journey & Post-Purchase Experience</li></ul>" },
+                    { title: 'Building the Brand', text: "Instead of relying solely on heavy advertising spend, the strategy focused on building a balanced and sustainable growth funnel across key digital touchpoints:<br><br><span class='font-medium text-stone-900 block mt-6 mb-1'>Brand Positioning & Visual Identity</span> Established a refined, consistent visual aesthetic (editorial/minimalist) across social media and marketplace touchpoints to build immediate customer trust.<br><br><span class='font-medium text-stone-900 block mt-4 mb-1'>Marketplace & Listing Optimization</span> Optimized product titles, search keywords, shop decorations, and cover visuals to maximize organic search discovery and click-through rates.<br><br><span class='font-medium text-stone-900 block mt-4 mb-1'>Performance & Promotion Funnel</span> Aligned promotional campaigns (Flash Sales, Bundle Deals, Add-on Deals) with targeted paid ads to drive conversion and optimize acquisition costs.<br><br><span class='font-medium text-stone-900 block mt-4 mb-1'>Retention & Customer Experience</span> Refined packaging, order fulfillment, and post-purchase customer interactions to maintain high store ratings and encourage repeat purchases." },
+                    { title: 'Business Outcome', text: "<ul class='space-y-4'><li><strong class='font-medium text-stone-900'>Foundation:</strong> Built a fully functional D2C e-commerce brand operating across primary digital marketplaces.</li><li><strong class='font-medium text-stone-900'>Process:</strong> Established an integrated marketing workflow combining visual branding, organic marketplace SEO, structured promotions, and paid performance media.</li><li><strong class='font-medium text-stone-900'>Insight:</strong> Developed end-to-end commercial insight, connecting every marketing decision directly to revenue, profitability, and customer retention.</li></ul>" },
+                    { title: 'Reflection', text: "Managing end-to-end brand operations fundamentally transformed how I approach marketing. When every strategic decision directly impacts bottom-line profitability and customer retention, marketing ceases to be just about promotion—it becomes a disciplined business growth driver." }
+                ]
+            }
+        };
+
+        // DOM Elements
+        const modal = document.getElementById('story-modal');
+        const modalContent = document.getElementById('modal-content-area');
+        const modalScrollContainer = document.getElementById('modal-scroll-container');
+        const progressBar = document.getElementById('modal-progress');
+        const navTitle = document.getElementById('modal-nav-title');
+        
+        let lastFocusedElement = null; 
+
+        function openStory(id) {
+            lastFocusedElement = document.activeElement;
+            const data = storiesData[id];
+            
+            navTitle.textContent = data.navTitle;
+
+            // Generate Executive Summary HTML
+            const execSummaryHtml = `
+                <div class="bg-white border border-stone-200/60 rounded-3xl p-8 md:p-12 mb-16 md:mb-24 shadow-sm relative overflow-hidden focus-block">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-gold-500"></div>
+                    <h3 class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-stone-400 uppercase mb-8">Executive Summary</h3>
+                    <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+                        <div>
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Business Challenge</p>
+                            <p class="text-sm md:text-base text-stone-900 font-medium leading-relaxed">${data.execSummary.challenge}</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Business Result</p>
+                            <p class="text-sm md:text-base text-stone-900 font-bold leading-relaxed">${data.execSummary.result}</p>
+                        </div>
+                        <div class="border-t border-stone-100 pt-6">
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Role</p>
+                            <p class="text-sm text-stone-700">${data.execSummary.role}</p>
+                        </div>
+                        <div class="border-t border-stone-100 pt-6">
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Campaign Scope</p>
+                            <p class="text-sm text-stone-700">${data.execSummary.scope}</p>
+                        </div>
+                        <div class="border-t border-stone-100 pt-6">
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Timeline</p>
+                            <p class="text-sm text-stone-700">${data.execSummary.timeline}</p>
+                        </div>
+                        <div class="border-t border-stone-100 pt-6">
+                            <p class="text-[10px] font-bold tracking-widest text-stone-400 uppercase mb-2">Collaboration</p>
+                            <p class="text-sm text-stone-700">${data.execSummary.collaboration}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Generate Sections HTML
+            const sectionsHtml = data.sections.map((sec, index) => `
+                <div class="modal-section mb-16 md:mb-24 opacity-0 translate-y-8 focus-block">
+                    <h3 class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-4">Section 0${index + 1}</h3>
+                    <h2 class="text-3xl md:text-4xl font-serif text-stone-900 mb-6">${sec.title}</h2>
+                    <div class="text-base md:text-lg text-stone-600 font-light leading-relaxed prose prose-stone max-w-none">
+                        ${sec.text}
+                    </div>
+                </div>
+            `).join('');
+
+            // Build Full Content
+            modalContent.innerHTML = `
+                <!-- Hero Image Area -->
+                <div class="max-w-7xl mx-auto px-6 mb-12 md:mb-20 mt-6">
+                    <div class="w-full h-[35vh] md:h-[55vh] lg:h-[65vh] rounded-2xl md:rounded-3xl overflow-hidden relative bg-stone-100">
+                        <img src="${data.image}" class="w-full h-full object-contain bg-stone-100 modal-hero-img" alt="${data.navTitle} Campaign Visual" loading="eager" decoding="async">
+                    </div>
+                </div>
+
+                <!-- Intro Area -->
+                <div class="max-w-4xl mx-auto px-6 mb-12 md:mb-20 focus-block">
+                    <span class="inline-block text-[10px] md:text-xs font-bold tracking-[0.2em] text-gold-600 uppercase mb-6 border-b border-gold-600/30 pb-1">${data.label}</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] text-stone-900 mb-8">
+                        ${data.headline}
+                    </h1>
+                </div>
+
+                <!-- Article Sections (Including Exec Summary) -->
+                <article class="max-w-3xl mx-auto px-6">
+                    ${execSummaryHtml}
+                    ${sectionsHtml}
+                </article>
+                
+                <!-- Bottom Action -->
+                <div class="max-w-3xl mx-auto px-6 text-center mt-16 pt-16 border-t border-stone-200">
+                    <h3 class="text-xl md:text-2xl font-serif text-stone-900 mb-6">Explore another case study</h3>
+                    <button onclick="closeStory()" class="btn-primary inline-flex items-center justify-center gap-2 bg-stone-900 text-white px-8 py-4 rounded-full font-medium text-sm md:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2">
+                        Back to Portfolio
+                    </button>
+                </div>
+            `;
+
+            document.body.style.overflow = 'hidden';
+            modal.setAttribute('aria-hidden', 'false');
+            modal.classList.add('active');
+            modalScrollContainer.scrollTop = 0;
+            
+            setTimeout(() => {
+                const closeBtn = modal.querySelector('button');
+                if(closeBtn) closeBtn.focus();
+            }, 100);
+
+            // GSAP Animations for Modal
+            setTimeout(() => {
+                gsap.to('.modal-hero-img', { scale: 1.03, duration: 20, ease: "linear" });
+                
+                gsap.to('.modal-section', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: '#modal-scroll-container',
+                        scroller: '#modal-scroll-container',
+                        start: "top top"
+                    }
+                });
+                
+                gsap.utils.toArray('.modal-section').forEach(section => {
+                    gsap.to(section, {
+                        scrollTrigger: {
+                            trigger: section,
+                            scroller: '#modal-scroll-container',
+                            start: "top 90%",
+                            onEnter: () => gsap.to(section, {y: 0, opacity: 1, duration: 0.8, ease: "power3.out"})
+                        }
+                    });
+                });
+            }, 300);
+        }
+
+        function closeStory() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            setTimeout(() => {
+                document.body.style.overflow = '';
+                modalContent.innerHTML = ''; 
+                if (lastFocusedElement) {
+                    lastFocusedElement.focus(); 
+                }
+            }, 800); 
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeStory();
+            }
+        });
+
+        // Smooth Modal Progress Bar
+        modalScrollContainer.addEventListener('scroll', () => {
+            const scrollTop = modalScrollContainer.scrollTop;
+            const scrollHeight = modalScrollContainer.scrollHeight - modalScrollContainer.clientHeight;
+            const progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0; 
+            progressBar.style.transform = `scaleX(${progress})`;
+        });
+
+        // Global Framework Accordion Toggle
+        function toggleFramework(element) {
+            const allSteps = document.querySelectorAll('.framework-step');
+            const isCurrentlyActive = element.classList.contains('active');
+            
+            allSteps.forEach(step => {
+                step.classList.remove('active');
+                step.setAttribute('aria-expanded', 'false');
+            });
+            
+            if (!isCurrentlyActive) {
+                element.classList.add('active');
+                element.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        // Global Interactions & Animations
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Respect the user's OS-level motion preference throughout.
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // 1. Cinematic Hero Reveal
+            const heroTl = gsap.timeline();
+
+            if (prefersReducedMotion) {
+                // Same final state, no animated motion.
+                gsap.set(['.gsap-hero-text', '.gsap-hero-headline-line', '.gsap-hero-desc', '.gsap-hero-btns', '.gsap-portrait'], { y: 0, scale: 1, opacity: 1 });
+            } else {
+                // Text reveal
+                heroTl.from('.gsap-hero-text', { y: 10, opacity: 0, duration: 0.8, ease: "power2.out", delay: 0.2 });
+
+                // Headline line by line
+                heroTl.from('.gsap-hero-headline-line', {
+                    y: 40,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power3.out"
+                }, "-=0.4");
+
+                // Paragraph fade up
+                heroTl.from('.gsap-hero-desc', { y: 20, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.4");
+
+                // Buttons
+                heroTl.from('.gsap-hero-btns', { y: 20, opacity: 0, duration: 0.6, ease: "power2.out" }, "-=0.4");
+
+                // Portrait subtle fade & scale
+                heroTl.from('.gsap-portrait', {
+                    y: 30,
+                    scale: 0.98,
+                    opacity: 0,
+                    duration: 1.5,
+                    ease: "power2.out"
+                }, "-=1.2");
+            }
+
+            // 2. Executive KPI Count-up
+            const counters = document.querySelectorAll('.count');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                ScrollTrigger.create({
+                    trigger: counter,
+                    start: "top 95%", 
+                    onEnter: () => {
+                        gsap.to(counter, {
+                            innerHTML: target,
+                            duration: prefersReducedMotion ? 0 : 1.5,
+                            snap: { innerHTML: 1 },
+                            ease: "power3.out" 
+                        });
+                    },
+                    once: true 
+                });
+            });
+
+            // 3. Elegant Scroll Reveals
+            gsap.utils.toArray('.scroll-reveal').forEach(element => {
+                gsap.fromTo(element, 
+                    { y: 25, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.9,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 85%",
+                            once: true
+                        }
+                    }
+                );
+            });
+
+            // 3b. Keyboard activation for card-style buttons (role="button")
+            // so keyboard/screen-reader users can open case studies with Enter/Space,
+            // matching what mouse users can already do via onclick.
+            document.querySelectorAll('[role="button"][tabindex="0"]').forEach(el => {
+                el.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        el.click();
+                    }
+                });
+            });
+
+            // 3c. Cursor-tracking spotlight on story cards
+            document.querySelectorAll('.spotlight-wrapper').forEach(wrapper => {
+                const spot = wrapper.querySelector('.spotlight');
+                if (!spot || prefersReducedMotion) return;
+                wrapper.addEventListener('mousemove', (e) => {
+                    const rect = wrapper.getBoundingClientRect();
+                    spot.style.setProperty('--spot-x', `${e.clientX - rect.left}px`);
+                    spot.style.setProperty('--spot-y', `${e.clientY - rect.top}px`);
+                });
+            });
+
+            // 5. Active Navigation & Scroll Indicator
+            const sections = document.querySelectorAll('.section-anchor');
+            const navLinks = document.querySelectorAll('.section-link');
+            const scrollIndicator = document.getElementById('scroll-indicator');
+            const navbarEl = document.getElementById('navbar');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollY = window.pageYOffset;
+
+                // Navbar elevated state once the page has scrolled
+                if (navbarEl) {
+                    navbarEl.classList.toggle('is-scrolled', scrollY > 20);
+                }
+
+                // Scroll Indicator fade out
+                if (scrollY > 150 && scrollIndicator) {
+                    scrollIndicator.style.opacity = '0';
+                    scrollIndicator.style.pointerEvents = 'none';
+                } else if (scrollIndicator) {
+                    scrollIndicator.style.opacity = '1';
+                }
+
+                // Active Nav State
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // Adjusted offset for fixed header
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth Anchor Scrolling override
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 90;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+                        window.scrollTo({
+                             top: offsetPosition,
+                             behavior: "smooth"
+                        });
+                    }
+                });
+            });
+            
+            initAIAssistant();
+        });
+
+        // AI Assistant Logic
+        function initAIAssistant() {
+            const toggleBtn = document.getElementById('ai-toggle-btn');
+            const closeBtn = document.getElementById('ai-close-btn');
+            const chatWindow = document.getElementById('ai-chat-window');
+            const chatForm = document.getElementById('ai-chat-form');
+            const chatInput = document.getElementById('ai-chat-input');
+            const messagesContainer = document.getElementById('ai-chat-messages');
+            const sendBtn = document.getElementById('ai-send-btn');
+            const initialContent = document.getElementById('ai-initial-content');
+
+            let isChatOpen = false;
+            
+            const apiKey = ""; // Canvas runtime
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+            
+            const systemPrompt = `You are an executive AI assistant acting on behalf of Nhi Le, an Integrated Marketing Project Lead based in Ho Chi Minh City, Vietnam. Your audience consists of senior international recruiters and hiring managers at global companies like Google, Canva, Stripe. 
+            
+            Tone: Professional, warm, confident, strategic, and concise. Speak highly of Nhi's capabilities. Keep answers to 1-2 short paragraphs maximum. Use bullet points if listing achievements.
+            
+            Key Information about Nhi Le:
+            - Role: Integrated Marketing Project Lead.
+            - Experience: 5+ years leading integrated campaigns across Banking, Aviation, FMCG, Tech, and E-commerce.
+            - Key Metrics: Managed up to 26B VND combined budgets, delivered 165% deposit growth, 10+ integrated campaigns.
+            - Strengths: Integrated Marketing, Campaign Leadership, Cross-functional Leadership, Agency Management, Creative Production.
+            
+            Instructions: Answer user queries accurately based ONLY on this context. Do not invent technical skills or software tools.`;
+
+            let chatHistory = [];
+
+            // Global function for suggested queries
+            window.sendSuggestedQuery = function(text) {
+                chatInput.value = text;
+                // Hide initial suggestions after first use
+                if(initialContent) initialContent.style.display = 'none';
+                chatForm.dispatchEvent(new Event('submit', { cancelable: true }));
+            };
+
+            const toggleChat = () => {
+                isChatOpen = !isChatOpen;
+                if (isChatOpen) {
+                    toggleBtn.classList.add('opacity-0', 'pointer-events-none');
+                    chatWindow.classList.add('active-chat');
+                    chatWindow.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                    chatWindow.setAttribute('aria-hidden', 'false');
+                    setTimeout(() => chatInput.focus(), 300);
+                } else {
+                    chatWindow.classList.remove('active-chat');
+                    chatWindow.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                    chatWindow.setAttribute('aria-hidden', 'true');
+                    if (window.scrollY > 800) toggleBtn.classList.remove('opacity-0', 'pointer-events-none');
+                }
+            };
+
+            toggleBtn.addEventListener('click', toggleChat);
+            closeBtn.addEventListener('click', toggleChat);
+            
+            // Subdued button reveal
+            window.addEventListener('scroll', () => {
+                if (!chatWindow.classList.contains('active-chat')) {
+                    if (window.scrollY > 800) toggleBtn.classList.remove('opacity-0', 'translate-y-12', 'pointer-events-none');
+                    else toggleBtn.classList.add('opacity-0', 'translate-y-12', 'pointer-events-none');
+                }
+            });
+
+            const appendMessage = (text, sender) => {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `chat-message flex flex-col gap-1 items-${sender === 'user' ? 'end' : 'start'} mt-2 opacity-0 translate-y-2`;
+                
+                const bubble = document.createElement('div');
+                if (sender === 'user') {
+                    bubble.className = 'bg-stone-900 text-white p-2.5 px-4 rounded-2xl rounded-tr-sm text-sm font-light max-w-[85%] shadow-sm';
+                } else {
+                    bubble.className = 'bg-white border border-stone-200 text-stone-700 p-3.5 rounded-2xl rounded-tl-sm text-sm font-light leading-relaxed shadow-sm max-w-[90%] prose prose-sm prose-stone';
+                }
+                
+                let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong class="font-medium">$1</strong>').replace(/\n\*/g, '<br>•');
+                bubble.innerHTML = formattedText;
+                msgDiv.appendChild(bubble);
+                messagesContainer.appendChild(msgDiv);
+                
+                requestAnimationFrame(() => {
+                    msgDiv.style.transition = 'all 0.3s ease-out';
+                    msgDiv.classList.remove('opacity-0', 'translate-y-2');
+                });
+                
+                messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
+            };
+
+            const showLoader = () => {
+                const loaderId = 'ai-loader-' + Date.now();
+                const msgDiv = document.createElement('div');
+                msgDiv.id = loaderId;
+                msgDiv.className = `chat-message flex flex-col gap-1 items-start mt-2`;
+                msgDiv.innerHTML = `
+                    <div class="bg-white border border-stone-200 text-stone-400 p-2.5 px-4 rounded-2xl rounded-tl-sm text-sm shadow-sm flex items-center gap-1.5 h-10">
+                        <span class="w-1.5 h-1.5 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 0s"></span>
+                        <span class="w-1.5 h-1.5 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 0.15s"></span>
+                        <span class="w-1.5 h-1.5 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 0.3s"></span>
+                    </div>
+                `;
+                messagesContainer.appendChild(msgDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                return loaderId;
+            };
+
+            chatForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const text = chatInput.value.trim();
+                if (!text) return;
+                
+                if(initialContent) initialContent.style.display = 'none';
+
+                chatInput.value = '';
+                chatInput.disabled = true;
+                sendBtn.disabled = true;
+                appendMessage(text, 'user');
+
+                const loaderId = showLoader();
+                
+                chatHistory.push({ role: "user", parts: [{ text: text }] });
+                const payload = { contents: chatHistory, systemInstruction: { parts: [{ text: systemPrompt }] } };
+
+                try {
+                    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                    if(!response.ok) throw new Error("API Error");
+                    const result = await response.json();
+                    
+                    const loader = document.getElementById(loaderId);
+                    if (loader) loader.remove();
+                    
+                    if (result.candidates && result.candidates[0].content) {
+                        const aiText = result.candidates[0].content.parts[0].text;
+                        chatHistory.push({ role: "model", parts: [{ text: aiText }] });
+                        appendMessage(aiText, 'model');
+                    }
+                } catch (error) {
+                    const loader = document.getElementById(loaderId);
+                    if (loader) loader.remove();
+                    appendMessage("I apologize, but I am having trouble connecting right now. Please feel free to reach out to Nhi directly.", 'model');
+                }
+                
+                chatInput.disabled = false;
+                sendBtn.disabled = false;
+                chatInput.focus();
+            });
+        }
+    </script>
+</body>
+</html>
