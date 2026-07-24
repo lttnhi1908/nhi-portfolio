@@ -540,6 +540,33 @@
             transform: translateX(4px);
         }
 
+        /* Capabilities: pill/tag treatment + faint texture to break up the
+           dark solid band and turn a plain bullet list into a scannable
+           tag cloud (same words, different rhythm). */
+        .capabilities-texture {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+            background-size: 22px 22px;
+        }
+        .cap-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.6rem 1.1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.03);
+            color: #D6D3D1;
+            font-weight: 300;
+            line-height: 1.2;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: default;
+        }
+        .cap-pill:hover {
+            border-color: rgba(166, 138, 97, 0.65);
+            background: rgba(166, 138, 97, 0.1);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
         /* Navbar elevated state on scroll */
         #navbar.is-scrolled {
             box-shadow: 0 8px 30px -12px rgba(28, 27, 26, 0.12);
@@ -885,45 +912,51 @@
     </section>
 
     <!-- Capabilities -->
-    <section class="py-24 md:py-32 bg-stone-900 text-stone-100 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <section class="py-24 md:py-32 bg-stone-900 text-stone-100 border-t border-stone-800 capabilities-texture relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-center mb-16 md:mb-20 scroll-reveal text-white focus-block">Capabilities</h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 lg:gap-20">
                 <!-- Column 1 -->
                 <div class="scroll-reveal focus-block">
-                    <h3 class="text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-6 md:mb-8 pb-4 border-b border-stone-800">Strategy</h3>
-                    <ul class="space-y-3 md:space-y-4 font-light text-stone-300 text-base md:text-lg cap-list">
-                        <li>Integrated Marketing Strategy</li>
-                        <li>Campaign Planning</li>
-                        <li>Go-to-market Strategy</li>
-                        <li>Consumer Insights</li>
-                        <li>Brand Communication</li>
-                    </ul>
+                    <h3 class="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-6 md:mb-8 pb-4 border-b border-stone-800">
+                        <i class="ph ph-compass text-base" aria-hidden="true"></i> Strategy
+                    </h3>
+                    <div class="flex flex-wrap gap-2.5 md:gap-3 text-sm md:text-base">
+                        <span class="cap-pill">Integrated Marketing Strategy</span>
+                        <span class="cap-pill">Campaign Planning</span>
+                        <span class="cap-pill">Go-to-market Strategy</span>
+                        <span class="cap-pill">Consumer Insights</span>
+                        <span class="cap-pill">Brand Communication</span>
+                    </div>
                 </div>
                 
                 <!-- Column 2 -->
                 <div class="scroll-reveal sm:delay-100 focus-block">
-                    <h3 class="text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-6 md:mb-8 pb-4 border-b border-stone-800">Leadership</h3>
-                    <ul class="space-y-3 md:space-y-4 font-light text-stone-300 text-base md:text-lg cap-list">
-                        <li>Cross-functional Leadership</li>
-                        <li>Stakeholder Management</li>
-                        <li>Agency & Vendor Management</li>
-                        <li>Marketing Budget Management</li>
-                        <li>Project Governance</li>
-                    </ul>
+                    <h3 class="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-6 md:mb-8 pb-4 border-b border-stone-800">
+                        <i class="ph ph-users-three text-base" aria-hidden="true"></i> Leadership
+                    </h3>
+                    <div class="flex flex-wrap gap-2.5 md:gap-3 text-sm md:text-base">
+                        <span class="cap-pill">Cross-functional Leadership</span>
+                        <span class="cap-pill">Stakeholder Management</span>
+                        <span class="cap-pill">Agency & Vendor Management</span>
+                        <span class="cap-pill">Marketing Budget Management</span>
+                        <span class="cap-pill">Project Governance</span>
+                    </div>
                 </div>
                 
                 <!-- Column 3 -->
                 <div class="scroll-reveal sm:col-span-2 md:col-span-1 md:delay-200 focus-block">
-                    <h3 class="text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-6 md:mb-8 pb-4 border-b border-stone-800">Execution</h3>
-                    <ul class="space-y-3 md:space-y-4 font-light text-stone-300 text-base md:text-lg cap-list">
-                        <li>Creative Production</li>
-                        <li>Campaign Delivery</li>
-                        <li>Marketing Operations</li>
-                        <li>Performance Optimization</li>
-                        <li>Marketing Analytics</li>
-                    </ul>
+                    <h3 class="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-gold-500 uppercase mb-6 md:mb-8 pb-4 border-b border-stone-800">
+                        <i class="ph ph-rocket-launch text-base" aria-hidden="true"></i> Execution
+                    </h3>
+                    <div class="flex flex-wrap gap-2.5 md:gap-3 text-sm md:text-base">
+                        <span class="cap-pill">Creative Production</span>
+                        <span class="cap-pill">Campaign Delivery</span>
+                        <span class="cap-pill">Marketing Operations</span>
+                        <span class="cap-pill">Performance Optimization</span>
+                        <span class="cap-pill">Marketing Analytics</span>
+                    </div>
                 </div>
             </div>
         </div>
