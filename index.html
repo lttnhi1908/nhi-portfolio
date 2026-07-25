@@ -789,8 +789,8 @@
     <section id="work" class="py-24 md:py-32 bg-[#F2EFEA] section-anchor overflow-hidden">
         <div class="w-full px-6 md:px-10 lg:px-14 xl:px-16">
             
-            <div class="max-w-2xl mx-auto mb-12 md:mb-16 text-center scroll-reveal focus-block">
-                <h2 class="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-stone-900 mb-6 apple-scrub-heading">Campaign Stories</h2>
+            <div class="max-w-4xl mx-auto mb-12 md:mb-16 text-center scroll-reveal focus-block">
+                <h2 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-semibold text-stone-900 mb-6 apple-scrub-heading whitespace-nowrap">Campaign Stories</h2>
                 <p class="text-base md:text-lg text-stone-600 font-light leading-relaxed text-balance mx-auto">
                     These selected projects demonstrate how I translate business objectives into integrated, large-scale marketing programs that deliver measurable corporate results.
                 </p>
@@ -801,11 +801,11 @@
             <div id="stories-carousel" class="flex gap-6 md:gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory pl-6 md:pl-10 lg:pl-14 xl:pl-16 pr-6 pb-4">
             
             <!-- Featured Card 1: OCB -->
-            <div class="story-card-wrapper snap-start shrink-0 w-[85%] sm:w-[58%] md:w-[44%] lg:w-[35%] xl:w-[31%]">
-            <article class="story-card rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer scroll-reveal group spotlight-wrapper h-full relative" onclick="openStory('story-ocb')" role="button" tabindex="0" aria-label="Read case study: OCB Bank">
+            <div class="story-card-wrapper snap-start shrink-0 w-[92%] sm:w-[75%] md:w-[60%] lg:w-[50%] xl:w-[45%]">
+            <article class="story-card rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer scroll-reveal group spotlight-wrapper h-full relative ring-2 ring-gold-500 ring-offset-4 ring-offset-[#F2EFEA] shadow-xl z-10" onclick="openStory('story-ocb')" role="button" tabindex="0" aria-label="Read case study: OCB Bank">
                 <div class="spotlight"></div>
                 <div class="h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden relative bg-stone-100">
-                    <img src="OCB_Card cover.png" alt="OCB Campaign Visual" class="w-full h-full object-contain story-card-img story-cover opacity-95 mix-blend-multiply" loading="lazy" decoding="async">
+                    <img src="OCB_Card cover.png" alt="OCB Campaign Visual" class="w-full h-full object-cover object-center story-card-img story-cover opacity-95 mix-blend-multiply" loading="lazy" decoding="async">
                     <div class="absolute inset-0 card-img-overlay"></div>
                     <div class="absolute bottom-6 left-6 right-6 z-20">
                         <span class="flex items-center gap-2 text-sm font-bold text-gold-400 mb-3 drop-shadow-md">
@@ -843,7 +843,7 @@
             <article class="story-card rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer scroll-reveal group spotlight-wrapper h-full relative" onclick="openStory('story-kokomi')" role="button" tabindex="0" aria-label="Read case study: Masan Kokomi 90">
                 <div class="spotlight"></div>
                 <div class="h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden relative bg-stone-100">
-                    <img src="Kokomi_Card cover.png" alt="Kokomi Campaign Visual" class="w-full h-full object-contain story-card-img story-cover opacity-90 mix-blend-multiply" loading="lazy" decoding="async">
+                    <img src="Kokomi_Card cover.png" alt="Kokomi Campaign Visual" class="w-full h-full object-cover object-center story-card-img story-cover opacity-90 mix-blend-multiply" loading="lazy" decoding="async">
                     <div class="absolute inset-0 card-img-overlay"></div>
                     <div class="absolute bottom-6 left-6 right-6 z-20">
                         <span class="flex items-center gap-2 text-sm font-bold text-gold-400 mb-3 drop-shadow-md">
@@ -1282,7 +1282,8 @@
         const storiesData = {
             'story-ocb': {
                 navTitle: 'OCB Bank',
-                image: 'OCB_KV.jpeg',
+                image: 'OCB_Card cover.png',
+                thumb: 'OCB_Thumb.png',
                 label: 'Banking • Financial Services',
                 headline: 'Transforming a Tet Campaign into a Long-term Brand Platform',
                 execSummary: {
@@ -1305,6 +1306,7 @@
             'story-vietjet': {
                 navTitle: 'Vietjet Air Academy',
                 image: 'Vietjet_KV.png',
+                thumb: 'Vietjet_Thumb.png',
                 label: 'Education • Aviation',
                 headline: 'Turning Brand Strategy into Integrated Marketing Execution.',
                 execSummary: {
@@ -1327,7 +1329,8 @@
             },
             'story-kokomi': {
                 navTitle: 'Kokomi',
-                image: 'Kokomi_Frame.png',
+                image: 'Kokomi_KV.png',
+                thumb: 'Kokomi_Thumb.png',
                 label: 'FMCG',
                 headline: 'Delivering a Social Video Featuring an AI-generated Brand Mascot.',
                 execSummary: {
@@ -1350,6 +1353,7 @@
             'story-nii': {
                 navTitle: 'Nii Studio',
                 image: 'Nii Studio.png',
+                thumb: 'Nii Studio_Thumb.png',
                 label: 'E-commerce',
                 headline: 'Driving sustainable e-commerce growth through targeted performance marketing and marketplace optimization.',
                 execSummary: {
@@ -1437,8 +1441,8 @@
                     const s = storiesData[otherId];
                     return `
                         <button onclick="openStory('${otherId}')" class="group text-left rounded-xl md:rounded-2xl overflow-hidden border border-stone-200/60 bg-white hover:shadow-lg hover:border-stone-300 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400">
-                            <div class="h-32 md:h-40 overflow-hidden relative bg-stone-100">
-                                <img src="${s.image}" alt="${s.navTitle} Campaign Visual" class="w-full h-full object-contain opacity-90 mix-blend-multiply transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                            <div class="h-32 md:h-40 overflow-hidden relative bg-stone-100 flex items-center justify-center">
+                                <img src="${s.thumb}" alt="${s.navTitle} Campaign Visual" class="w-full h-full object-cover object-center opacity-90 mix-blend-multiply transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async">
                             </div>
                             <div class="p-4">
                                 <span class="text-[11px] font-bold tracking-[0.15em] text-gold-600 uppercase block mb-1">${s.label}</span>
@@ -1452,8 +1456,8 @@
             modalContent.innerHTML = `
                 <!-- Hero Image Area -->
                 <div class="w-full px-6 mb-12 md:mb-20 mt-6">
-                    <div class="w-full h-[35vh] md:h-[55vh] lg:h-[65vh] rounded-2xl md:rounded-3xl overflow-hidden relative bg-stone-100">
-                        <img src="${data.image}" class="w-full h-full object-contain bg-stone-100 modal-hero-img" alt="${data.navTitle} Campaign Visual" loading="eager" decoding="async">
+                    <div class="w-full rounded-2xl md:rounded-3xl overflow-hidden relative bg-stone-100 flex items-center justify-center">
+                        <img src="${data.image}" class="w-full h-auto object-contain bg-stone-100 modal-hero-img" alt="${data.navTitle} Campaign Visual" loading="eager" decoding="async">
                     </div>
                 </div>
 
@@ -1495,7 +1499,7 @@
 
             // GSAP Animations for Modal
             setTimeout(() => {
-                gsap.to('.modal-hero-img', { scale: 1.03, duration: 20, ease: "linear" });
+                // gsap.to('.modal-hero-img', { scale: 1.03, duration: 20, ease: "linear" });
                 
                 gsap.to('.modal-section', {
                     y: 0,
