@@ -33,11 +33,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- GSAP for Premium Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     
     <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 
     <script>
         tailwind.config = {
@@ -70,7 +70,7 @@
     </script>
 
     <style>
-        /* Premium Customizations */
+        /* Premium Customizations & Design System Global Alignment */
         ::selection {
             background-color: #E5DED5;
             color: #1C1B1A;
@@ -87,11 +87,21 @@
             scroll-padding-top: 100px;
         }
 
-        /* Portrait Integration */
+        /* Portrait Integration - Exact original positioning and size */
         .portrait-blend {
             mix-blend-mode: multiply;
             filter: contrast(1.05) saturate(0.95);
             will-change: transform;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 72% 20% !important;
+        }
+
+        /* Vignette depth */
+        .hero-vignette {
+            box-shadow: inset 0 0 120px rgba(28, 27, 26, 0.08);
+            pointer-events: none;
         }
 
         /* Logo Carousel */
@@ -231,10 +241,11 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(28, 27, 26, 0.2);
         }
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px -10px rgba(28, 27, 26, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 18px 35px -8px rgba(28, 27, 26, 0.35);
             background-color: #2C2A28;
         }
         .btn-primary:active { transform: translateY(0); }
@@ -249,8 +260,8 @@
             background-position: left bottom;
             color: white;
             border-color: #1C1B1A;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px -10px rgba(28, 27, 26, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(28, 27, 26, 0.12);
         }
         .btn-outline:active { transform: translateY(0); }
 
@@ -662,7 +673,7 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-40 top-0 transition-all duration-500 bg-stone-50/90 backdrop-blur-md border-b border-stone-200/50" id="navbar">
-        <div class="w-full px-6 md:px-10 lg:px-14 xl:px-16 py-5 md:py-6 flex justify-between items-center">
+        <div class="w-full px-6 md:px-10 lg:px-14 xl:px-16 py-4 md:py-5 flex justify-between items-center">
             <a href="#" class="font-serif text-xl tracking-wide font-semibold text-stone-900 transition-transform hover:scale-105" aria-label="Nhi Le Home">NHI LE<span class="text-gold-500">.</span></a>
             
             <div class="hidden md:flex gap-12 text-[15px] font-medium text-stone-500">
@@ -692,82 +703,73 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen pt-24 pb-12 flex items-center overflow-hidden" id="hero-portrait-container">
+    <!-- Hero Section (Refined: No description, compact vertical spacing, cohesive visual block) -->
+    <section class="relative min-h-[105vh] pt-24 pb-14 flex items-center overflow-hidden hero-vignette" id="hero-portrait-container">
         <!-- Full-bleed Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="hero banner.png" alt="Nhi Le Portrait" class="w-full h-full object-cover object-[75%_top] md:object-top portrait-blend gsap-portrait origin-center" loading="eager" fetchpriority="high" decoding="async">
+            <img src="hero banner.png" alt="Nhi Le Portrait" class="portrait-blend gsap-portrait" loading="eager" fetchpriority="high" decoding="async">
         </div>
 
-        <!-- Gradient Overlays for Text Legibility -->
+        <!-- Gradient Overlays - Clean natural blend -->
         <div class="absolute inset-0 z-0 bg-stone-900/5 mix-blend-multiply"></div>
-        <div class="absolute inset-0 z-0 bg-gradient-to-r from-stone-50 via-stone-50/85 sm:via-stone-50/75 to-transparent sm:to-stone-50/10 w-full sm:w-4/5 lg:w-3/5 pointer-events-none"></div>
-        <div class="absolute inset-x-0 bottom-0 z-0 h-2/5 bg-gradient-to-t from-stone-50 via-stone-50/10 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-r from-stone-50/75 via-stone-50/40 sm:via-stone-50/30 to-transparent w-full sm:w-4/5 lg:w-3/5 pointer-events-none"></div>
+        <div class="absolute inset-x-0 bottom-0 z-0 h-2/5 bg-gradient-to-t from-stone-50 via-stone-50/15 to-transparent pointer-events-none"></div>
 
-        <div class="w-full px-6 md:px-10 lg:px-14 xl:px-16 relative z-10 flex flex-col h-full justify-center mt-12 md:mt-0">
-            <div class="max-w-2xl">
+        <div class="w-full px-6 md:px-10 lg:px-14 xl:px-16 relative z-10 flex flex-col h-full justify-center">
+            <div class="max-w-3xl">
                 <div class="gsap-hero-elem overflow-hidden">
-                    <span class="inline-block text-[11px] md:text-sm font-bold tracking-[0.2em] text-gold-600 uppercase mb-6 border-b border-gold-600/30 pb-1 gsap-hero-text">Integrated Marketing Project Lead</span>
+                    <span class="inline-block text-[11px] md:text-sm font-bold tracking-[0.2em] text-gold-600 uppercase mb-3 border-b border-gold-600/30 pb-1 gsap-hero-text">Integrated Marketing Project Lead</span>
                 </div>
                 
-                <h1 class="gsap-hero-elem text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-semibold leading-[1.05] text-stone-900 mb-6 focus-block drop-shadow-sm">
+                <!-- Headline kept exact, hierarchy polished without description gap -->
+                <h1 class="gsap-hero-elem text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.08] text-stone-900 mb-6 focus-block drop-shadow-sm">
                     <div class="overflow-hidden"><span class="inline-block gsap-hero-headline-line">Leading integrated marketing programs</span></div>
-                    <div class="overflow-hidden"><span class="inline-block gsap-hero-headline-line">from <span class="italic text-stone-700">strategy</span> to measurable</span></div>
-                    <div class="overflow-hidden"><span class="inline-block gsap-hero-headline-line">business outcomes.</span></div>
+                    <div class="overflow-hidden mt-1.5"><span class="inline-block gsap-hero-headline-line text-stone-700 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal">from strategy to measurable business outcomes.</span></div>
                 </h1>
                 
-                <p class="gsap-hero-elem gsap-hero-desc text-base md:text-lg lg:text-xl text-stone-600 font-light leading-relaxed mb-10 focus-block">
-                    I help businesses turn complex marketing challenges into structured, integrated programs by aligning strategy, creative, production and cross-functional teams to deliver measurable impact.
-                </p>
+                <!-- Description removed completely per instructions -->
                 
-                <div class="gsap-hero-elem gsap-hero-btns flex flex-wrap gap-4 mb-12 lg:mb-16">
-                    <a href="#work" class="btn-primary magnetic-btn inline-flex items-center justify-center gap-2 bg-stone-900 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-medium shadow-lg">
+                <div class="gsap-hero-elem gsap-hero-btns flex flex-wrap gap-4 mb-8 lg:mb-10">
+                    <a href="#work" class="btn-primary magnetic-btn inline-flex items-center justify-center gap-2 bg-stone-900 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-medium shadow-lg">
                         Explore Campaign Stories <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1"></i>
                     </a>
-                    <a href="#contact" class="btn-outline magnetic-btn inline-flex items-center justify-center gap-2 border border-stone-300 bg-stone-50/60 backdrop-blur-sm text-stone-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-medium">
+                    <a href="#contact" class="btn-outline magnetic-btn inline-flex items-center justify-center gap-2 border border-stone-300 bg-stone-50/60 backdrop-blur-sm text-stone-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-medium">
                         Let's Connect <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
 
-                <div class="gsap-hero-elem gsap-hero-kpi grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 border-t border-stone-300/70 pt-8 focus-block">
+                <!-- KPI: Balanced spacing and premium typography -->
+                <div class="gsap-hero-elem gsap-hero-kpi grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 border-t border-stone-300/70 pt-6 focus-block">
                     <div>
-                        <p class="text-3xl md:text-4xl font-serif text-stone-900 mb-1"><span class="count" data-target="5">0</span>+</p>
-                        <p class="text-[11px] font-medium text-stone-600 uppercase tracking-widest leading-snug">Years<br><span class="text-stone-500">Marketing Experience</span></p>
+                        <p class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-1.5"><span class="count" data-target="5">0</span>+</p>
+                        <p class="text-[10px] md:text-xs font-medium text-stone-500 uppercase tracking-widest leading-snug">Years Experience</p>
                     </div>
                     <div>
-                        <p class="text-3xl md:text-4xl font-serif text-stone-900 mb-1"><span class="count" data-target="14">0</span>B <span class="text-lg font-sans tracking-normal text-stone-600">VND</span></p>
-                        <p class="text-[11px] font-medium text-stone-600 uppercase tracking-widest leading-snug">Largest Budget<br><span class="text-stone-500">Campaign Managed</span></p>
+                        <p class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-1.5"><span class="count" data-target="14">0</span>B <span class="text-base font-sans tracking-normal text-stone-600">VND</span></p>
+                        <p class="text-[10px] md:text-xs font-medium text-stone-500 uppercase tracking-widest leading-snug">Largest Budget</p>
                     </div>
                     <div>
-                        <p class="text-3xl md:text-4xl font-serif text-stone-900 mb-1"><span class="count" data-target="10">0</span>+</p>
-                        <p class="text-[11px] font-medium text-stone-600 uppercase tracking-widest leading-snug">Integrated Campaigns<br><span class="text-stone-500">Delivered</span></p>
+                        <p class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-1.5"><span class="count" data-target="10">0</span>+</p>
+                        <p class="text-[10px] md:text-xs font-medium text-stone-500 uppercase tracking-widest leading-snug">Campaigns Delivered</p>
                     </div>
                     <div>
-                        <p class="text-3xl md:text-4xl font-serif text-stone-900 mb-1"><span class="count" data-target="6">0</span></p>
-                        <p class="text-[11px] font-medium text-stone-600 uppercase tracking-wider leading-[1.4] mt-1">
-                            Industries<br>
-                            <span class="text-stone-500 font-light tracking-normal normal-case">Banking • Aviation • FMCG<br>E-commerce • Tech • Agency</span>
-                        </p>
+                        <p class="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-1.5"><span class="count" data-target="6">0</span></p>
+                        <p class="text-[10px] md:text-xs font-medium text-stone-500 uppercase tracking-widest leading-snug">Industries Covered</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-stone-600 scroll-indicator" id="scroll-indicator">
-                <span class="text-[11px] font-medium tracking-[0.2em] uppercase">Explore</span>
-                <i class="ph ph-arrow-down text-lg"></i>
             </div>
         </div>
     </section>
 
     <!-- Trusted By -->
-    <section class="relative py-16 md:py-20 bg-white border-y border-stone-200 shadow-sm overflow-hidden focus-block z-20">
+    <section class="relative py-14 md:py-16 bg-white border-y border-stone-200 shadow-sm overflow-hidden focus-block z-25">
         <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(166,138,97,0.05) 0%, transparent 65%);"></div>
-        <div class="w-full px-6 md:px-10 lg:px-14 xl:px-16 mb-8 text-center scroll-reveal relative z-10">
-            <div class="w-10 h-px bg-gold-500 mx-auto mb-5"></div>
-            <h3 class="text-xs md:text-sm font-bold tracking-[0.2em] text-gold-600 uppercase mb-4">Trusted By</h3>
+        <div class="w-full px-6 md:px-10 lg:px-14 xl:px-16 mb-6 text-center scroll-reveal relative z-10">
+            <div class="w-10 h-px bg-gold-500 mx-auto mb-4"></div>
+            <h3 class="text-xs md:text-sm font-bold tracking-[0.2em] text-gold-600 uppercase mb-3">Trusted By</h3>
             <p class="text-stone-600 max-w-2xl mx-auto font-light text-sm md:text-base leading-relaxed text-balance">Trusted by leading brands to direct integrated marketing initiatives from strategy through execution.</p>
         </div>
-        <div class="relative z-10 w-full overflow-hidden flex bg-white py-4 scroll-reveal logo-carousel-container" aria-hidden="true">
+        <div class="relative z-10 w-full overflow-hidden flex bg-white py-3 scroll-reveal logo-carousel-container" aria-hidden="true">
             <div class="logo-track items-center gap-20 md:gap-32 px-12">
                 <img src="Logo_OCB.jpg" alt="OCB" class="brand-logo" loading="lazy" decoding="async">
                 <img src="Logo_Shopee.jpg" alt="Shopee" class="brand-logo" loading="lazy" decoding="async">
